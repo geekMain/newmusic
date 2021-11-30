@@ -1,10 +1,11 @@
 ### Java template
 # Compiled class file
 *.class
-
+# idea
+.idea/
 # Log file
 *.log
-
+*.xml
 # BlueJ files
 *.ctxt
 
