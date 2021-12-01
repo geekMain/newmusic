@@ -1,25 +1,22 @@
-package com.music.bean.user;
+package com.music.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+
 public class User {
-    private Integer id;
+    private Integer userId;
+    private Integer userLoginId;
     private String username;
     private String introduce;
-    private Integer sex;
-    private Date birthday;
-    private String avatar;
-    private String area;
-    private Date registerDate;
-
-
+    private String sex;
+    private Data userBirthday;
+    private String userAvatar;
+    private String userArea;
 }

@@ -97,7 +97,7 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i is-close=false class="ok-icon"></i>
                         用户管理
                     </a>
                 </li>
@@ -121,19 +121,56 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i is-close=false class="ok-icon ok-icon-unfold"></i>
                         用户中心管理
                     </a>
+                    <ul id="userSubpage" style="background-color: #4476A7;display:none;">
+                        <li class="layui-nav-item" style="flood-color: #4476A7;">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                粉丝模块
+                            </a>
+                        </li>
+                        <li class="layui-nav-item" style="flood-color: #4476A7">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                消息模块
+                            </a>
+                        </li>
+                        <li class="layui-nav-item" style="flood-color: #4476A7">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                日志模块
+                            </a>
+                        </li>
+                        <li class="layui-nav-item" style="flood-color: #4476A7">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                收藏模块
+                            </a>
+                        </li>
+                        <li class="layui-nav-item" style="flood-color: #4476A7">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                歌单模块
+                            </a>
+                        </li>
+                        <li class="layui-nav-item" style="flood-color: #4476A7">
+                            <a href="javascript:" style="font-size: 1px">
+                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                评论模块
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </div>
-
     <!-- 内容主体区域 -->
     <div class="content-body">
         <div id="tabContent" class="layui-tab-content ok-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe id="main-content" src='/meter/m' frameborder="0" scrolling="yes" width="100%" height="100%"></iframe>
+                <iframe id="main-content" src='/Page/meter' frameborder="0" scrolling="yes" width="100%" height="100%"></iframe>
             </div>
         </div>
     </div>
@@ -145,4 +182,7 @@
 </div>
 </body>
 <script src="../../js/jump.js"></script>
+<script src="../../js/onclickUserCenter.js"></script>
+<!-- 引入layui js -->
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
 </html>
