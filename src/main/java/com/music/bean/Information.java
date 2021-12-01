@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 //好友信息表
 public class Information {
-    private Integer id;
-    private Integer userId;
-    private Integer friendId;
+    private Integer id;//好友主键
+    private Integer userId;//用户id
+    private Integer friendId;//好友id
 }

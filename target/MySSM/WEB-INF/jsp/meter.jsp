@@ -78,7 +78,7 @@
         <div class="layui-col-md8">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">用户排行榜</div>
+                    <div class="ok-card-title">用户听歌排行榜</div>
                 </div>
                 <div class="ok-card-body map-body">
                     <div style="height: 100%;" id="userSourceMap"></div>
@@ -89,7 +89,7 @@
         <div class="layui-col-md4">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">用户访问</div>
+                    <div class="ok-card-title">歌曲热度</div>
                 </div>
                 <div class="ok-card-body map-body">
                     <div class="progress-box ">
@@ -98,7 +98,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-a">用户比例</div>
+                            <div class="por-txt pro-a">歌曲比例</div>
                             <div class="layui-progress" lay-filter="pro-a">
                                 <div class="layui-progress-bar per-bg-a" lay-percent="35%"></div>
                             </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-a">用户比例</div>
+                            <div class="por-txt pro-a">歌曲比例</div>
                             <div class="layui-progress" lay-filter="pro-b">
                                 <div class="layui-progress-bar per-bg-b" lay-percent="15%"></div>
                             </div>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-c">用户比例</div>
+                            <div class="por-txt pro-c">歌曲比例</div>
                             <div class="layui-progress" lay-filter="pro-c">
                                 <div class="layui-progress-bar per-bg-c" lay-percent="20%"></div>
                             </div>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-d">用户比例</div>
+                            <div class="por-txt pro-d">歌曲比例</div>
                             <div class="layui-progress" lay-filter="pro-d">
                                 <div class="layui-progress-bar per-bg-d" lay-percent="30%"></div>
                             </div>
@@ -152,7 +152,7 @@
         <div class="layui-col-md6">
             <div class="layui-card">
                 <div class="ok-card-body ">
-                    <table id="userData" lay-filter="userdata"></table>
+
                 </div>
             </div>
         </div>

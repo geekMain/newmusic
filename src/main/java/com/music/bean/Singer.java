@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 //歌手
 public class Singer {
-    private Integer singerId;
-    private String singerName;
-    private Integer nationalityId;
+    private Integer singerId;//歌手主键
+    private String singerName;//歌手名字
+    private Integer nationalityId;//歌手国籍
 }

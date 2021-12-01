@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 //歌曲风格
 public class MusicStyle {
-    private Integer styleId;
-    private String styleName;
+    private Integer styleId;//风格主键
+    private String styleName;//风格名
 }

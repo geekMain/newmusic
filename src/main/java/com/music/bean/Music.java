@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 //歌曲
 public class Music {
-    private Integer musicId;
-    private Integer styleId;
-    private String musicName;
-    private String musicLength;
-    private String musicTextName;
-    private Integer singerId;
+    private Integer musicId;//歌曲主键
+    private Integer styleId;//风格id
+    private String musicName;//歌曲名字
+    private String musicLength;//歌曲时长
+    private String musicTextName;//歌词文件名
+    private Integer singerId;//歌手id
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 //歌曲热度
 public class MusicTop {
-    private Integer topId;
-    private Integer userId;
-    private Integer musicId;
+    private Integer topId;//热度主键
+    private Integer userId;//用户id
+    private Integer musicId;//歌曲id
 }

@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 
 //会员用户信息
 public class UserVip {
-    private Integer vipId;
-    private Integer userId;
+    private Integer vipId;//会员用户主键
+    private Integer userId;//用户id
 }

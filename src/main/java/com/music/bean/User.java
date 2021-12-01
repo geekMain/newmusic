@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 
 //用户
 public class User {
-    private Integer userId;
-    private Integer userLoginId;
-    private String username;
-    private String introduce;
-    private String sex;
-    private Data userBirthday;
-    private String userAvatar;
-    private String userArea;
+    private Integer userId;//用户主键
+    private Integer userLoginId;//账号密码主键
+    private String username;//用户名称
+    private String introduce;//用户介绍
+    private String sex;//用户性别
+    private Data userBirthday;//用户生日
+    private String userAvatar;//用户头像
+    private String userArea;//用户地址
 }

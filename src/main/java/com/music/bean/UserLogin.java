@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 
 //登录，用户账号密码
 public class UserLogin {
-    private Integer id;
-    private String userCount;
-    private String userPassword;
-    private Data userRegisterDate;
+    private Integer id;//账号密码主键
+    private String userCount;//用户账号
+    private String userPassword;//用户密码
+    private Data userRegisterDate;//用户注册时间
 }

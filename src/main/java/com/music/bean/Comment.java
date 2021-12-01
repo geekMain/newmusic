@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 //sys_comment评论
 public class Comment {
-    private Integer id;
-    private Integer userId;
-    private String comContext;
-    private Integer objId;
-    private Integer comType;
+    private Integer id;//评论主键
+    private Integer userId;//发布者id
+    private String comContext;//评论内容
+    private Integer objId;//对象id
+    private Integer comType;//评论分类
 }
