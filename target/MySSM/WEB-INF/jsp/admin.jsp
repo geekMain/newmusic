@@ -3,10 +3,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>新音乐后台管理系统</title>
+    <title>STAR Music后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/okadmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 <body class="layui-layout-body">
 <!-- 更换主体 Eg:orange_theme|blue_theme -->
@@ -16,7 +19,7 @@
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item">
                 <a class="ok-menu ok-show-menu" href="javascript:" title="菜单切换">
-                    <i class="layui-icon layui-icon-shrink-right"></i>
+                    <i class="fa fa-bars" aria-hidden="true"style=""></i>
                 </a>
             </li>
         </ul>
@@ -26,27 +29,26 @@
             </li>
             <li class="layui-nav-item">
                 <a class="ok-refresh" href="javascript:" title="刷新">
-                    <i class="layui-icon layui-icon-refresh-3"></i>
+                    <i class="fa fa-rotate-right" aria-hidden="true"></i>
                 </a>
             </li>
             <li class="no-line layui-nav-item layui-hide-xs">
-                <a id="notice" class="flex-vc pr10 pl10" href="javascript:">
-                    <i class="ok-icon ok-icon-notice icon-head-i" title="系统公告"></i>
-                    <span class="layui-badge-dot"></span>
-                    <cite></cite>
+                <a id="notice" class="pr10 pl10" href="javascript:">
+                    <i class="fa fa-bell" title="系统公告"></i>
+                    <span class="layui-badge-dot" style="left: 11px"></span>
                 </a>
             </li>
 
             <li class="no-line layui-nav-item layui-hide-xs">
-                <a id="lock" class="flex-vc pr10 pl10" href="javascript:">
-                    <i class="ok-icon ok-icon-lock icon-head-i" title="锁屏"></i><cite></cite>
+                <a id="lock" class="ok-refresh" href="javascript:" title="锁屏">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                 </a>
             </li>
 
             <!-- 全屏 -->
             <li class="layui-nav-item layui-hide-xs">
-                <a id="fullScreen" class=" pr10 pl10" href="javascript:;">
-                    <i class="layui-icon layui-icon-screen-full"></i>
+                <a id="fullScreen" class=" pr10 pl10" href="javascript:;" title="全屏">
+                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                 </a>
             </li>
 
@@ -80,7 +82,7 @@
     <!--左侧导航区域-->
     <div class="layui-side layui-side-menu okadmin-bg-20222A ok-left">
         <div class="layui-side-scroll okadmin-side">
-            <div class="okadmin-logo">New Music！</div>
+            <div class="okadmin-logo">STAR Music！</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
                     <img src="images/avatar.png" class="userAvatar">
@@ -91,73 +93,73 @@
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">
                 <li class="layui-nav-item layui-this">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i class="fa fa-globe" aria-hidden="true"></i>
                         仪表盘
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon"></i>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         用户管理
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i class="fa fa-font" aria-hidden="true"></i>
                         专辑管理
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i class="fa fa-microphone" aria-hidden="true"></i>
                         歌曲管理
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon">&#xe654;</i>
+                        <i class="fa fa-frown-o" aria-hidden="true"></i>
                         风格管理
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">
-                        <i is-close=false class="ok-icon ok-icon-unfold"></i>
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
                         用户中心管理
                     </a>
                     <ul id="userSubpage" style="background-color: #4476A7;display:none;">
                         <li class="layui-nav-item" style="flood-color: #4476A7;">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-heartbeat" aria-hidden="true"></i>
                                 粉丝模块
                             </a>
                         </li>
                         <li class="layui-nav-item" style="flood-color: #4476A7">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 消息模块
                             </a>
                         </li>
                         <li class="layui-nav-item" style="flood-color: #4476A7">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-edit" aria-hidden="true"></i>
                                 日志模块
                             </a>
                         </li>
                         <li class="layui-nav-item" style="flood-color: #4476A7">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
                                 收藏模块
                             </a>
                         </li>
                         <li class="layui-nav-item" style="flood-color: #4476A7">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-list-alt" aria-hidden="true"></i>
                                 歌单模块
                             </a>
                         </li>
                         <li class="layui-nav-item" style="flood-color: #4476A7">
                             <a href="javascript:" style="font-size: 1px">
-                                <i is-close=false class="ok-icon">&#xe654;</i>
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 评论模块
                             </a>
                         </li>
