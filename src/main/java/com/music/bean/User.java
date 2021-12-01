@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
+//用户
 public class User {
     private Integer userId;
     private Integer userLoginId;

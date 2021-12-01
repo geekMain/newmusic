@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>新音乐后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../../css/okadmin.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/okadmin.css">
 </head>
 <body class="layui-layout-body">
 <!-- 更换主体 Eg:orange_theme|blue_theme -->
@@ -52,7 +52,7 @@
 
             <li class="no-line layui-nav-item">
                 <a href="javascript:">
-                    <img src="../../images/avatar.png" class="layui-nav-img">
+                    <img src="images/avatar.png" class="layui-nav-img">
                 </a>
                 <dl id="userInfo" class="layui-nav-child">
                     <dd><a lay-id="u-1" href="javascript:" data-url="pages/member/user.html">个人中心<span
@@ -83,7 +83,7 @@
             <div class="okadmin-logo">New Music！</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
-                    <img src="../../images/avatar.png" class="userAvatar">
+                    <img src="images/avatar.png" class="userAvatar">
                 </a>
                 <p>你好！<span class="userName">bobi</span>, 欢迎登录</p>
             </div>
@@ -170,7 +170,7 @@
     <div class="content-body">
         <div id="tabContent" class="layui-tab-content ok-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe id="main-content" src='/Page/meter' frameborder="0" scrolling="yes" width="100%" height="100%"></iframe>
+                <iframe id="main-content" src='Page/meter' frameborder="0" scrolling="yes" width="100%" height="100%"></iframe>
             </div>
         </div>
     </div>
@@ -181,8 +181,8 @@
     </div>
 </div>
 </body>
-<script src="../../js/jump.js"></script>
-<script src="../../js/onclickUserCenter.js"></script>
+<script src="js/jump.js"></script>
+<script src="js/onclickUserCenter.js"></script>
 <!-- 引入layui js -->
 <script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
 </html>

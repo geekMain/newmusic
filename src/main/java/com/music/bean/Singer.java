@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+//歌手
 public class Singer {
     private Integer singerId;
     private String singerName;

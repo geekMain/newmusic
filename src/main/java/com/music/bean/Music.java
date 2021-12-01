@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+//歌曲
 public class Music {
     private Integer musicId;
     private Integer styleId;

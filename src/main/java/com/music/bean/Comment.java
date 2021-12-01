@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
-
+//sys_comment评论
 public class Comment {
     private Integer id;
     private Integer userId;

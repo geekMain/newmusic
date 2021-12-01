@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+//歌曲热度
 public class MusicTop {
     private Integer topId;
     private Integer userId;

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+
+//专辑
 public class Album {
     private Integer albumId;
     private String albumName;

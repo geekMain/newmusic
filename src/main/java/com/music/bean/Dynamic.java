@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor  /*无参构造器*/
 @AllArgsConstructor
 @Builder
+//好友动态信息
 public class Dynamic {
     private Integer dynamicId;
     private Integer userId;

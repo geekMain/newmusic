@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
+//登录，用户账号密码
 public class UserLogin {
     private Integer id;
     private String userCount;

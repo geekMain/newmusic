@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
+//会员用户信息
 public class UserVip {
     private Integer vipId;
     private Integer userId;

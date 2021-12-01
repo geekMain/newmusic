@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>ok-admin v2.0 | 很赞的后台模版</title>
+    <title>title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../css/oksub.css" media="all"/>
 </head>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="cart-r">
                         <div class="stat-text incomes-num">0</div>
-                        <div class="stat-heading">收入</div>
+                        <div class="stat-heading">歌曲</div>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="cart-r">
                         <div class="stat-text goods-num">0</div>
-                        <div class="stat-heading">商品</div>
+                        <div class="stat-heading">专辑</div>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="cart-r">
                         <div class="stat-text blogs-num">0</div>
-                        <div class="stat-heading">博客</div>
+                        <div class="stat-heading">会员</div>
                     </div>
                 </div>
             </div>
