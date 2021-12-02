@@ -9,31 +9,31 @@ public class PageController {
 
     @RequestMapping("/meter")
     public String meter(){
-        return "meter";
+        return "mainBody/meter";
     }
 
     @RequestMapping("/userMana")
     public String userMana(){
-        return "userMana";
+        return "mainBody/userMana";
     }
 
     @RequestMapping("/albumMana")
     public String albumMana(){
-        return "albumMana";
+        return "mainBody/albumMana";
     }
 
     @RequestMapping("/musicMana")
     public String musicMana(){
-        return "musicMana";
+        return "mainBody/musicMana";
     }
 
     @RequestMapping("/styleMana")
     public String styleMana(){
-        return "styleMana";
+        return "mainBody/styleMana";
     }
 
     @RequestMapping("/userCenter")
     public String userCenter(){
-        return "userCenter";
+        return "mainBody/userCenter";
     }
 }
