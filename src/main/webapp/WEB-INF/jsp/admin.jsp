@@ -3,22 +3,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>STAR Music后台管理系统</title>
+    <title>New Music后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/okadmin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css"/>
 
 </head>
 <body class="layui-layout-body">
 <!-- 更换主体 Eg:orange_theme|blue_theme -->
-<div class="layui-layout layui-layout-admin okadmin blue_theme">
+<div id="main-body" class="layui-layout layui-layout-admin okadmin blue_theme ok-left-hide">
     <!--头部导航-->
     <div class="layui-header okadmin-header">
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item">
-                <a class="ok-menu ok-show-menu" href="javascript:" title="菜单切换">
+                <a id="mainBody-show" class="ok-menu ok-show-menu" href="javascript:" title="菜单切换">
                     <i class="fa fa-bars" aria-hidden="true"style=""></i>
                 </a>
             </li>
@@ -82,7 +81,7 @@
     <!--左侧导航区域-->
     <div class="layui-side layui-side-menu okadmin-bg-20222A ok-left">
         <div class="layui-side-scroll okadmin-side">
-            <div class="okadmin-logo">STAR Music！</div>
+            <div class="okadmin-logo">New Music！</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
                     <img src="images/avatar.png" class="userAvatar">
@@ -185,6 +184,7 @@
 </body>
 <script src="js/jump.js"></script>
 <script src="js/onclickUserCenter.js"></script>
+<script src="js/main_body.js"></script>
 <!-- 引入layui js -->
-<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
+<script src="lib/layui/layui.js"></script>
 </html>

@@ -13,6 +13,7 @@
     <title>title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../css/oksub.css" media="all"/>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
 </head>
 <body class="ok-body-scroll console">
 <div class="ok-body home">
@@ -78,10 +79,82 @@
         <div class="layui-col-md8">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">用户听歌排行榜</div>
+                    <div class="ok-card-title">歌曲热度排行</div>
                 </div>
                 <div class="ok-card-body map-body">
-                    <div style="height: 100%;" id="userSourceMap"></div>
+                    <div id="main"  style="height: 100%;"></div>
+                    <script type="text/javascript">
+                        var chartDom = document.getElementById('main');
+                        var myChart = echarts.init(chartDom);
+                        var option;
+
+                        option = {
+                            title: {
+                                text: 'Stacked Line'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            legend: {
+                                data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                            },
+                            grid: {
+                                left: '3%',
+                                right: '4%',
+                                bottom: '3%',
+                                containLabel: true
+                            },
+                            toolbox: {
+                                feature: {
+                                    saveAsImage: {}
+                                }
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [
+                                {
+                                    name: 'Email',
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: [120, 132, 101, 134, 90, 230, 210]
+                                },
+                                {
+                                    name: 'Union Ads',
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: [220, 182, 191, 234, 290, 330, 310]
+                                },
+                                {
+                                    name: 'Video Ads',
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: [150, 232, 201, 154, 190, 330, 410]
+                                },
+                                {
+                                    name: 'Direct',
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: [320, 332, 301, 334, 390, 330, 320]
+                                },
+                                {
+                                    name: 'Search Engine',
+                                    type: 'line',
+                                    stack: 'Total',
+                                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                                }
+                            ]
+                        };
+
+                        option && myChart.setOption(option);
+
+                    </script>
+
                 </div>
             </div>
         </div>
@@ -89,7 +162,7 @@
         <div class="layui-col-md4">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">歌曲热度</div>
+                    <div class="ok-card-title">用户访问</div>
                 </div>
                 <div class="ok-card-body map-body">
                     <div class="progress-box ">
@@ -98,7 +171,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-a">歌曲比例</div>
+                            <div class="por-txt pro-a">用户比例</div>
                             <div class="layui-progress" lay-filter="pro-a">
                                 <div class="layui-progress-bar per-bg-a" lay-percent="35%"></div>
                             </div>
@@ -111,7 +184,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-a">歌曲比例</div>
+                            <div class="por-txt pro-a">用户比例</div>
                             <div class="layui-progress" lay-filter="pro-b">
                                 <div class="layui-progress-bar per-bg-b" lay-percent="15%"></div>
                             </div>
@@ -124,7 +197,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-c">歌曲比例</div>
+                            <div class="por-txt pro-c">用户比例</div>
                             <div class="layui-progress" lay-filter="pro-c">
                                 <div class="layui-progress-bar per-bg-c" lay-percent="20%"></div>
                             </div>
@@ -137,7 +210,7 @@
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
-                            <div class="por-txt pro-d">歌曲比例</div>
+                            <div class="por-txt pro-d">用户比例</div>
                             <div class="layui-progress" lay-filter="pro-d">
                                 <div class="layui-progress-bar per-bg-d" lay-percent="30%"></div>
                             </div>
