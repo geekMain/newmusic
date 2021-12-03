@@ -6,7 +6,7 @@
         <select id="getUserLogin" parameterType="userLogin" resultType="userLogin">
 
             select * from
-            user_loginW
+            user_login
 
         </select>
 
