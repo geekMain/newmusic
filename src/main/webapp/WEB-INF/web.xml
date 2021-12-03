@@ -13,14 +13,25 @@
       <param-value>classpath:spring/springmvc-context.xml</param-value>
     </init-param>
 
-    <load-on-startup>1</load-on-startup>
-
   </servlet>
   <!-- 访问DispatcherServlet对应的路径 -->
   <servlet-mapping>
     <servlet-name>servlet</servlet-name>
     <url-pattern>/</url-pattern> <!--/不过滤jsp防止死循环-->
   </servlet-mapping>
+
+  <!--配置Spring监听器启动,在服务器启动的时候最先启动-->
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+
+  <!--配置SpringMVC核心配置文件-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/spring-context.xml</param-value>
+  </context-param>
 
   <!--    设置进入页面-->
   <welcome-file-list>

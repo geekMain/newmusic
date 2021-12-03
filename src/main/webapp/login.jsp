@@ -10,7 +10,7 @@
 </head>
 <body class="page-fill">
     <div class="page-fill" id="login">
-        <form action="" class="layui-form" style="opacity: 0.9;filter: blur(0.3px);">
+        <form action="/UserLogin/login" class="layui-form" style="opacity: 0.9;filter: blur(0.3px);">
             <div class="login_face"><img src="images/logo.jpg"></div>
             <div class="input-item">
                 <input type="text" name="userCount" placeholder="请输入账号" autocomplete="off" required maxlength="11" class="layui-input">

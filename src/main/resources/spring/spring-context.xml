@@ -46,6 +46,6 @@
 <!--    </bean>-->
 
     <!--指定mapper扫描接口路径-->
-    <mybatis:scan base-package="com.java.dao"/>
+    <mybatis:scan base-package="com.music.dao"/>
 
 </beans>
