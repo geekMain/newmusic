@@ -10,5 +10,6 @@ public class UserLoginServiceImpl implements UserLoginService {
     @Override
     public UserLogin getUserLogin() {
         return userLoginDao.getUserLogin();
+
     }
 }
