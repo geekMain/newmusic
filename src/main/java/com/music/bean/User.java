@@ -17,7 +17,7 @@ public class User {
     private String username;//用户名称
     private String introduce;//用户介绍
     private String sex;//用户性别
-    private Data userBirthday;//用户生日
+    private String userBirthday;//用户生日
     private String userAvatar;//用户头像
     private String userArea;//用户地址
 }

@@ -35,7 +35,7 @@
 
   <!--    设置进入页面-->
   <welcome-file-list>
-    <welcome-file>/WEB-INF/jsp/admin.jsp</welcome-file>
+    <welcome-file>/WEB-INF/jsp/login.jsp</welcome-file>
   </welcome-file-list>
 
   <!--    设置404页面-->

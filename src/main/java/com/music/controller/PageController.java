@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/Page")
 public class PageController {
 
+    @RequestMapping("/admin")
+    public String admin(){ return "admin";}
+
     @RequestMapping("/meter")
     public String meter(){
         return "mainBody/meter";

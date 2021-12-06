@@ -16,7 +16,7 @@ public class Album {
     private Integer albumId;//专辑id
     private String albumName;//专辑名字
     private Integer albumSingerId;//专辑歌手id
-    private Data issuingReleaseTime;//专辑发布时间
+    private String issuingReleaseTime;//专辑发布时间
     private Integer companyId;//专辑发行公司
     private String introduce;//专辑介绍
 

@@ -14,7 +14,7 @@ public class SongList {
     private Integer songId;//歌单主键
     private Integer userId;//用户id
     private String songName;//歌单名字
-    private Data songCreateTime;//歌单创建时间
+    private String songCreateTime;//歌单创建时间
     private String songIntroduce;//歌单介绍
     private Integer songCount;//歌单浏览量
 }
