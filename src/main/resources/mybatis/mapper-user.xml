@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.UserDao">
+        <select id="getUser" parameterType="userLogin" resultType="user">
+            select user_id as userId,user_login_id as userLoginId,user_name as username,introduce,user_sex as sex,user_birthday as userBirthday,user_avatar as userAvatar,user_area as userArea
+            from sys_user
+            where user_login_id = #{id}
+
+        </select>
+
+</mapper>

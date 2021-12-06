@@ -6,5 +6,7 @@
         <!-- 给单个的类起别名-->
         <typeAlias type="com.music.bean.UserLogin" alias="userLogin"/>
 
+        <typeAlias type="com.music.bean.User" alias="user"/>
+
     </typeAliases>
 </configuration>

@@ -74,6 +74,15 @@
 .seting-pass .layui-table th{text-align:center}
 .seting-pass .changePwd{width:100%;max-width: 480px;}
 
+.msg{
+	position: fixed;
+	z-index: 9999;
+	top: 10%;
+	left: 50%;
+	margin: -50px 0 0 -70px;
+	transition: all 3s;
+}
+
 
 /*响应样式*/
 @media screen and (max-width:750px){
@@ -82,3 +91,5 @@
 @media screen and (max-width:548px){
 	.ok-in-hide-xs,[ok-pc-in-show]{display:none!important}
 }
+
+

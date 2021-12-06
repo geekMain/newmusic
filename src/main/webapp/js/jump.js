@@ -3,7 +3,7 @@ var main = document.getElementById("main-content");
 for (let i = 0; i < li_list.length; i++) {
     li_list[i].addEventListener("click",  function jump(){
         var controllerStr = ["meter","userMana","albumMana","musicMana","styleMana","userCenter"]
-        main.src = controllerStr[i];
+        main.src = "/Page/" + controllerStr[i];
     });
 }
 
