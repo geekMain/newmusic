@@ -1,6 +1,6 @@
-@import "../lib/layui/css/layui.css";
-@import "../lib/fonts/iconfont.css";
-@import "../lib/layui/css/okmodules/jquery.contextMenu.css";
+@import "../../lib/layui/css/layui.css";
+@import "../../lib/fonts/iconfont.css";
+@import "../../lib/layui/css/okmodules/jquery.contextMenu.css";
 
 /*html{
     webkit-filter: grayscale(100%);

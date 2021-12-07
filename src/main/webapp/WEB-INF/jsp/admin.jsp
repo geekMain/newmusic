@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>New Music后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="/css/okadmin.css">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/okadmin.css">
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"/>
 
 </head>
@@ -53,7 +53,7 @@
 
             <li class="no-line layui-nav-item">
                 <a href="javascript:">
-                    <img src="/avatar/${user.userAvatar}" class="layui-nav-img">
+                    <img src="/static/avatar/${user.userAvatar}" class="layui-nav-img">
                 </a>
                 <dl id="userInfo" class="layui-nav-child">
                     <dd><a lay-id="u-1" href="javascript:" data-url="pages/member/user.html">个人中心<span
@@ -84,7 +84,7 @@
             <div class="okadmin-logo">New Music！</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
-                    <img src="/avatar/${user.userAvatar}" class="userAvatar">
+                    <img src="/static/avatar/${user.userAvatar}" class="userAvatar">
                 </a>
                 <p>你好！<span class="userName">${user.username}</span>, 欢迎登录</p>
             </div>
@@ -182,9 +182,9 @@
     </div>
 </div>
 </body>
-<script src="/js/jump.js"></script>
-<script src="/js/onclickUserCenter.js"></script>
-<script src="/js/main_body.js"></script>
+<script src="/static/js/jump.js"></script>
+<script src="/static/js/onclickUserCenter.js"></script>
+<script src="/static/js/main_body.js"></script>
 <!-- 引入layui js -->
 <script src="/lib/layui/layui.js"></script>
 </html>

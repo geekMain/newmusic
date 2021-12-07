@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <title>title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="../css/oksub.css" media="all"/>
+    <link rel="stylesheet" href="/static/css/oksub.css" media="all"/>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
 </head>
 <body class="ok-body-scroll console">
@@ -22,7 +22,7 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="../images/home-01.png" alt="none"/>
+                        <img src="/static/images/home-01.png" alt="none"/>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text incomes-num">0</div>
@@ -36,7 +36,7 @@
             <div class="layui-card ">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="../images/home-02.png" alt="none"/>
+                        <img src="/static/images/home-02.png" alt="none"/>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text goods-num">0</div>
@@ -50,7 +50,7 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="../images/home-03.png" alt="none"/>
+                        <img src="/static/images/home-03.png" alt="none"/>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text blogs-num">0</div>
@@ -64,7 +64,7 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="../images/home-04.png" alt="none"/>
+                        <img src="/static/images/home-04.png" alt="none"/>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text fans-num">0</div>
@@ -167,7 +167,7 @@
                 <div class="ok-card-body map-body">
                     <div class="progress-box ">
                         <div class="pro-head">
-                            <img src="../images/face.jpg" alt="none"/>
+                            <img src="/static/images/face.jpg" alt="none"/>
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
@@ -180,7 +180,7 @@
 
                     <div class="progress-box ">
                         <div class="pro-head">
-                            <img src="../images/face.jpg" alt="none"/>
+                            <img src="/static/images/face.jpg" alt="none"/>
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
@@ -193,7 +193,7 @@
 
                     <div class="progress-box ">
                         <div class="pro-head">
-                            <img src="../images/face.jpg" alt="none"/>
+                            <img src="/static/images/face.jpg" alt="none"/>
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>
@@ -206,7 +206,7 @@
 
                     <div class="progress-box ">
                         <div class="pro-head">
-                            <img src="../images/face.jpg" alt="none"/>
+                            <img src="/static/images/face.jpg" alt="none"/>
                         </div>
                         <div class="pro-data">
                             <h4 class="por-title">Visits</h4>

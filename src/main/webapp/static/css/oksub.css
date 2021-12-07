@@ -1,5 +1,5 @@
-@import "../css/common.css";
-@import "../lib/layui/css/layui.css";
+@import "common.css";
+@import "../../lib/layui/css/layui.css";
 
 /**控制台样式*/
 .console .map-body{height:360px}
