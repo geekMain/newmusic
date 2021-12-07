@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -27,7 +28,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- 基本功能 -->
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span><span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#"><i class="bi bi-brightness-alt-high"></i></span><span class="sr-only">(current)</span></a></li>
                 <li><a href="#1" data-toggle="tab">查看</a></li>
                 <li><a href="#2" data-toggle="tab">添加</a></li>
             </ul>
@@ -45,17 +46,57 @@
     <div class="tab-pane fade in active" id="1">
         <table class="table table-condensed">
             <tr>
-                <th>id</th>
-                <th>风格id</th>
-                <th>歌曲名字</th>
+                <th>歌曲名称</th>
+                <th>风格</th>
+                <th>歌手</th>
                 <th>歌曲时长</th>
-                <th>歌词文件名</th>
-                <th>歌手id</th>
+                <th>歌曲播放量</th>
             </tr>
         </table>
     </div>
     <div  class="tab-pane fade" id="2">
-        添加
+        <div>
+            <form model="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">歌曲名称</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="歌曲名称">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">歌曲链接</label>
+                    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="歌曲链接">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">歌手名称</label>
+                    <input type="password" class="form-control" id="exampleInputEmail3" placeholder="歌手名称">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail4">图片链接</label>
+                    <input type="password" class="form-control" id="exampleInputEmail4" placeholder="图片链接">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">歌词文件</label>
+                    <input type="file" id="exampleInputFile">
+                </div>
+                <div class="form-group">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>请选择你歌曲的类型</option>
+                        <!--这里之后需要从数据库中获取数据-->
+                        <option value="1">流行</option>
+                        <option value="2">摇滚</option>
+                        <option value="3">民谣</option>
+                        <option value="4">电子</option>
+                        <option value="5">舞曲</option>
+                        <option value="6">民谣</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 这个不必在意
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">添加</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>
