@@ -15,5 +15,7 @@ public class UserLogin {
     private Integer id;//账号密码主键
     private String userCount;//用户账号
     private String userPassword;//用户密码
+    private String userEmail;//用户邮箱
+    private String userPhone;//用户手机号
     private String userRegisterDate;//用户注册时间
 }

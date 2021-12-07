@@ -96,7 +96,7 @@
                                 trigger: 'axis'
                             },
                             legend: {
-                                data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                                data: ['EmailUtil', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
                             },
                             grid: {
                                 left: '3%',
@@ -119,7 +119,7 @@
                             },
                             series: [
                                 {
-                                    name: 'Email',
+                                    name: 'EmailUtil',
                                     type: 'line',
                                     stack: 'Total',
                                     data: [120, 132, 101, 134, 90, 230, 210]
