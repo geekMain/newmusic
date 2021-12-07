@@ -14,33 +14,33 @@
     <div class="page-fill" id="login">
         <form action="/userLogin/index" method="post" class="layui-form" style="opacity: 0.9;filter: blur(0.3px);">
             <div class="login_face"><img src="/images/logo.jpg"></div>
-            <div class="input-item">
-                <input type="text" name="userCount" placeholder="请输入账号" autocomplete="off" required maxlength="11" class="layui-input">
+            <div id="userCount-div" class="layui-form-item input-item">
+                <label for="userCount">账号</label>
+                <input type="text" name="userCount" placeholder="请输入账号" required autocomplete="off" id="userCount" class="layui-input layui-input-focus">
             </div>
-            <div class="input-item">
-                <input type="password" name="userPassword" placeholder="请输入密码" autocomplete="off" required class="layui-input">
+            <div id="userPassword-div" class="layui-form-item input-item">
+                <label for="userPassword">密码</label>
+                <input type="password" name="userPassword" placeholder="请输入密码" required autocomplete="off" id="userPassword" class="layui-input layui-input-focus">
             </div>
             <div class="layui-form-item">
-                <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
+                <button class="layui-btn layui-block msg-information" data-type="information">登录</button>
             </div>
             <div class="login-link">
-                <a href="forget.html">忘记密码?</a>
+                <a href="/register.html">注册</a>
             </div>
         </form>
     </div>
-    <!--js逻辑-->
-    <script src="/lib/layui/layui.js"></script>
-    <script>
-        if (!${msg}){
-            var msgDiv = document.getElementsByClassName("msg")[0];
-            msgDiv.innerHTML = "账号或密码错误"
-            msgDiv.style.opacity = "1";
-            var timer = window.setTimeout(function (){
-                msgDiv.style.opacity = "0";
-            },500);
-        }
-    </script>
 </body>
+
+<script src="/lib/layui/layui.js"></script>
+<script src="/js/loginerorr.js"></script>
+<script src="/js/loginform.js"></script>
+
+<script>
+    layui.use('layer', function() {
+        var err = ${msg}
+    });
+</script>
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>

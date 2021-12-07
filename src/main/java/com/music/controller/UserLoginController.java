@@ -27,15 +27,15 @@ public class UserLoginController {
 
     @RequestMapping(value ="/index",method = RequestMethod.POST)
     public String login(UserLogin user, Model model){
+        System.out.println(user.toString());
 
         if (userLoginService.getUserLogin(user) == null){
-            model.addAttribute("msg",false);
+            model.addAttribute("msg","layer.msg('账号或密码错误');");
             return "login";
         }
 
         User user1 = userService.getUser(userLoginService.getUserLogin(user));
         model.addAttribute("user",user1);
-        model.addAttribute("msg",true);
         return "admin";
     }
 }
