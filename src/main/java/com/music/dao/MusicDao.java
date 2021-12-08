@@ -12,14 +12,16 @@ import java.util.Map;
 
 
 public interface MusicDao {
-  //查询数据
-  List<Music> selectMusic();
-  //修改数据
-  int updateMusic(Music music);
-  //删除数据
-  int deleteMusic(@Param("id") int musicId);
-  //查询单个
-  Music queryMusic(@Param("id") int musicId);
-  //增加数据
-  int insertMusic(Map<String, Object> map);
+//  //查询数据
+//  List<Music> selectMusic();
+//  //修改数据
+//  int updateMusic(Music music);
+//  //删除数据
+//  int deleteMusic(@Param("id") int musicId);
+//  //查询单个
+//  Music queryMusic(@Param("id") int musicId);
+//  //增加数据
+//  int insertMusic(Map<String, Object> map);
+
+  List<Music> queryAllSongs();
 }

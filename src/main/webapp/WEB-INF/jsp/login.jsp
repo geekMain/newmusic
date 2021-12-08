@@ -35,8 +35,9 @@
 <script src="/static/js/loginerorr.js"></script>
 <script src="/static/js/loginform.js"></script>
 <script>
+
     layui.use('layer', function() {
-        var err = ${msg}
+        ${msg}
     })
 </script>
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>

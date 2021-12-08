@@ -19,5 +19,5 @@ public class Music {
     private String musicImg;//歌曲图片
     private String musicFile;//歌曲文件
     private String musicTextName;//歌词文件名
-    private Integer count;//歌曲播放数量
+    private Integer musicCount;//歌曲播放数量
 }

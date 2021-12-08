@@ -8,5 +8,7 @@
 
         <typeAlias type="com.music.bean.User" alias="user"/>
 
+        <typeAlias type="com.music.bean.Music" alias="music"/>
+
     </typeAliases>
 </configuration>

@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/static/css/oksub.css" media="all"/>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body class="ok-body-scroll console">
 <div class="ok-body home">
@@ -22,10 +23,10 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="/static/images/home-01.png" alt="none"/>
+                        <i class="layui-icon layui-icon-headset layui-font-orange layui-font-35"></i>
                     </div>
                     <div class="cart-r">
-                        <div class="stat-text incomes-num">0</div>
+                        <div id="music-number" class="stat-text incomes-num">0</div>
                         <div class="stat-heading">歌曲</div>
                     </div>
                 </div>
@@ -36,10 +37,10 @@
             <div class="layui-card ">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="/static/images/home-02.png" alt="none"/>
+                        <i class="layui-icon layui-icon-prev-circle layui-font-green layui-font-35"></i>
                     </div>
                     <div class="cart-r">
-                        <div class="stat-text goods-num">0</div>
+                        <div id="music-test" class="stat-text goods-num">0</div>
                         <div class="stat-heading">专辑</div>
                     </div>
                 </div>
@@ -50,7 +51,7 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="/static/images/home-03.png" alt="none"/>
+                        <i class="layui-icon layui-icon-diamond layui-font-red layui-font-35"></i>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text blogs-num">0</div>
@@ -64,7 +65,7 @@
             <div class="layui-card">
                 <div class="ok-card-body">
                     <div class="img-box" ok-pc-in-show>
-                        <img src="/static/images/home-04.png" alt="none"/>
+                        <i class="layui-icon layui-icon-user layui-font-blue layui-font-35"></i>
                     </div>
                     <div class="cart-r">
                         <div class="stat-text fans-num">0</div>
@@ -82,21 +83,47 @@
                     <div class="ok-card-title">歌曲热度排行</div>
                 </div>
                 <div class="ok-card-body map-body">
-                    <div id="main"  style="height: 100%;"></div>
+                    <div id="music"  style="width: 100%; height: 100%;"></div>
+                    <script>
+                        function musicList() {
+                            var music;
+                            $.ajax({
+                                    url:"/adminIndex/dailyPopularityOfSongs",
+                                    type: "get",
+                                    async: false,
+                                    dataType: "json",
+                                    success:function (data) {
+                                        music = data;
+                                        $("#music-number").html(data.length);
+                                    }
+                                }
+                            )
+                            return music;
+                        }
+                        function musicData(){
+                            var nameDataArr = new Array();
+                            var countDataArr = new Array();
+                            var music = musicList()
+                            $.each(music, function (i, music) {
+                                nameDataArr[i] = music.musicName;
+                                countDataArr[i] = music.musicCount;
+                            });
+                            return new Array(nameDataArr,countDataArr)
+                        }
+                    </script>
                     <script type="text/javascript">
-                        var chartDom = document.getElementById('main');
+                        var chartDom = document.getElementById('music');
                         var myChart = echarts.init(chartDom);
                         var option;
-
                         option = {
                             title: {
-                                text: 'Stacked Line'
+                                text: '每日热度'
                             },
                             tooltip: {
                                 trigger: 'axis'
                             },
                             legend: {
-                                data: ['EmailUtil', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                                data: [musicData()[0][0], musicData()[0][1], musicData()[0][2], musicData()[0][3], musicData()[0][4]]
                             },
                             grid: {
                                 left: '3%',
@@ -119,40 +146,44 @@
                             },
                             series: [
                                 {
-                                    name: 'EmailUtil',
+                                    name: musicData()[0][0],
                                     type: 'line',
                                     stack: 'Total',
-                                    data: [120, 132, 101, 134, 90, 230, 210]
+                                    data: [120, 132, 101, 134, 90, 230, musicData()[1][0]]
                                 },
                                 {
-                                    name: 'Union Ads',
+                                    name: musicData()[0][1],
                                     type: 'line',
                                     stack: 'Total',
-                                    data: [220, 182, 191, 234, 290, 330, 310]
+                                    data: [220, 182, 191, 234, 290, 330, musicData()[1][1]]
                                 },
                                 {
-                                    name: 'Video Ads',
+                                    name: musicData()[0][2],
                                     type: 'line',
                                     stack: 'Total',
-                                    data: [150, 232, 201, 154, 190, 330, 410]
+                                    data: [150, 232, 201, 154, 190, 330, musicData()[1][2]]
                                 },
                                 {
-                                    name: 'Direct',
+                                    name: musicData()[0][3],
                                     type: 'line',
                                     stack: 'Total',
-                                    data: [320, 332, 301, 334, 390, 330, 320]
+                                    data: [320, 332, 301, 334, 390, 330, musicData()[1][3]]
                                 },
                                 {
-                                    name: 'Search Engine',
+                                    name: musicData()[0][4],
                                     type: 'line',
                                     stack: 'Total',
-                                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                                    data: [820, 932, 901, 934, 1290, 1330, musicData()[1][4]]
                                 }
                             ]
                         };
 
                         option && myChart.setOption(option);
 
+                    </script>
+
+                    <script>
+                        window.setInterval(musicData, 1000);
                     </script>
 
                 </div>

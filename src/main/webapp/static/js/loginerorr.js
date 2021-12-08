@@ -5,7 +5,7 @@ layui.use('layer', function(){
     var active = {
         information: function(){
             if ($('#userCount').val() != "" && $('#userPassword').val() != ""){
-                layer.msg('正在载入..');
+                layer.msg('正在载入...');
             }
         }
     }

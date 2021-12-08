@@ -5,7 +5,12 @@
 <mapper namespace="com.music.dao.UserLoginDao">
         <select id="getUserLogin" parameterType="userLogin" resultType="UserLogin">
 
-            select id, user_count as userCount, user_password as userPassword, user_email as userEmail, user_phone as userPhone, user_register_date as userRegisterDate
+            select id,
+                   user_count as userCount,
+                   user_password as userPassword,
+                   user_email as userEmail,
+                   user_phone as userPhone,
+                   user_register_date as userRegisterDate
             from user_login where user_count=#{userCount} and user_password=#{userPassword}
 
         </select>

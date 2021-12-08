@@ -11,7 +11,7 @@
 
 </head>
 <body class="layui-layout-body">
-<!-- 更换主体 Eg:orange_theme|blue_theme -->
+
 <div id="main-body" class="layui-layout layui-layout-admin okadmin blue_theme ok-left-hide">
     <!--头部导航-->
     <div class="layui-header okadmin-header">
@@ -185,6 +185,5 @@
 <script src="/static/js/jump.js"></script>
 <script src="/static/js/onclickUserCenter.js"></script>
 <script src="/static/js/main_body.js"></script>
-<!-- 引入layui js -->
 <script src="/lib/layui/layui.js"></script>
 </html>
