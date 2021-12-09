@@ -80,7 +80,7 @@
         <div class="layui-col-md8">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">歌曲热度排行</div>
+                    <div class="ok-card-title">歌曲热度</div>
                 </div>
                 <div class="ok-card-body map-body">
                     <div id="music"  style="width: 100%; height: 100%;"></div>
@@ -113,71 +113,160 @@
                     </script>
                     <script type="text/javascript">
                         var chartDom = document.getElementById('music');
-                        var myChart = echarts.init(chartDom);
-                        var option;
-                        option = {
-                            title: {
-                                text: '每日热度'
-                            },
-                            tooltip: {
-                                trigger: 'axis'
-                            },
-                            legend: {
-                                data: [musicData()[0][0], musicData()[0][1], musicData()[0][2], musicData()[0][3], musicData()[0][4]]
-                            },
-                            grid: {
-                                left: '3%',
-                                right: '4%',
-                                bottom: '3%',
-                                containLabel: true
-                            },
-                            toolbox: {
-                                feature: {
-                                    saveAsImage: {}
-                                }
-                            },
-                            xAxis: {
-                                type: 'category',
-                                boundaryGap: false,
-                                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                            },
-                            yAxis: {
-                                type: 'value'
-                            },
-                            series: [
-                                {
-                                    name: musicData()[0][0],
-                                    type: 'line',
-                                    stack: 'Total',
-                                    data: [120, 132, 101, 134, 90, 230, musicData()[1][0]]
-                                },
-                                {
-                                    name: musicData()[0][1],
-                                    type: 'line',
-                                    stack: 'Total',
-                                    data: [220, 182, 191, 234, 290, 330, musicData()[1][1]]
-                                },
-                                {
-                                    name: musicData()[0][2],
-                                    type: 'line',
-                                    stack: 'Total',
-                                    data: [150, 232, 201, 154, 190, 330, musicData()[1][2]]
-                                },
-                                {
-                                    name: musicData()[0][3],
-                                    type: 'line',
-                                    stack: 'Total',
-                                    data: [320, 332, 301, 334, 390, 330, musicData()[1][3]]
-                                },
-                                {
-                                    name: musicData()[0][4],
-                                    type: 'line',
-                                    stack: 'Total',
-                                    data: [820, 932, 901, 934, 1290, 1330, musicData()[1][4]]
-                                }
-                            ]
+                        var myChart = echarts.init((chartDom), null, {
+                            width: chartDom.width,
+                            height: chartDom.height
+                        });
+                        window.onresize = function() {
+                            myChart.resize();
                         };
 
+                        var plantCap = [
+                            {
+                                name: musicData()[0][0],
+                                value: musicData()[1][0],
+                            },
+                            {
+                                name: musicData()[0][1],
+                                value: musicData()[1][1],
+                            },
+                            {
+                                name: musicData()[0][2],
+                                value: musicData()[1][2],
+                            },
+                            {
+                                name: musicData()[0][3],
+                                value: musicData()[1][3],
+                            },
+                            {
+                                name: musicData()[0][4],
+                                value: musicData()[1][4],
+                            },
+                        ];
+
+
+
+                        var datalist = [
+                            {
+                                offset: [56, 48],
+                                symbolSize: musicData()[1][0],
+                                opacity: 0.95,
+                                color: 'rgba(104,184,55, 1)',
+                            },
+                            {
+                                offset: [20, 43],
+                                symbolSize: musicData()[1][1],
+                                opacity: 0.84,
+                                color: 'rgba(104,184,55, 0.95)',
+                            },
+                            {
+                                offset: [83, 35],
+                                symbolSize: musicData()[1][2],
+                                opacity: 0.8,
+                                color: 'rgba(104,184,55, 0.95)',
+                            },
+                            {
+                                offset: [36, 30],
+                                symbolSize: musicData()[1][3],
+                                opacity: 0.75,
+                                color: 'rgba(104,184,55, 0.90)',
+                            },
+                            {
+                                offset: [64, 20],
+                                symbolSize: musicData()[1][4],
+                                opacity: 0.7,
+                                color: 'rgba(104,184,55, 0.90)',
+                            },
+                        ];
+                        var datas = [];
+                        for (var i = 0; i < plantCap.length; i++) {
+                            var item = plantCap[i];
+                            var itemToStyle = datalist[i];
+                            datas.push({
+                                name: item.value + '\n' + '  ' + '\n'+item.name,
+                                value: itemToStyle.offset,
+                                symbolSize: itemToStyle.symbolSize * 2,
+                                label: {
+                                    normal: {
+                                        textStyle: {
+                                            fontSize: 14,
+                                            color: '#1bf084',
+                                        },
+                                    },
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        color: itemToStyle.color,
+                                        opacity: itemToStyle.opacity,
+                                    },
+                                },
+                            });
+                        }
+                        option = {
+                            grid: {
+                                show: false,
+                                top: 10,
+                                bottom: 10,
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(255,255,255,0.7)',
+                                formatter: function (param) {
+                                    var value = param.value;
+                                    return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+                                        + param.name
+                                        + '</div>'
+                                }
+                            },
+                            xAxis: [
+                                {
+                                    gridIndex: 0,
+                                    type: 'value',
+                                    show: false,
+                                    min: 0,
+                                    max: 100,
+                                    nameLocation: 'middle',
+                                    nameGap: 5,
+                                },
+                            ],
+                            yAxis: [
+                                {
+                                    gridIndex: 0,
+                                    min: 0,
+                                    show: false,
+                                    max: 100,
+                                    nameLocation: 'middle',
+                                    nameGap: 30,
+                                },
+                            ],
+                            series: [
+                                {
+                                    type: 'scatter',
+                                    symbol: 'circle',
+                                    symbolSize: 120,
+                                    label: {
+                                        normal: {
+                                            show: true,
+                                            formatter: '{b}',
+                                            color: '#fff',
+                                            textStyle: {
+                                                fontSize: '20',
+                                            },
+                                        },
+                                    },
+                                    itemStyle: {
+                                        normal: {
+                                            borderWidth: '2',
+                                            borderType: 'solid',
+                                            borderColor: '#fff',
+                                            color: '#68b837',
+                                            shadowColor: '#68b837',
+                                            shadowBlur: 10,
+                                        },
+                                    },
+                                    data: datas,
+                                },
+                            ],
+                        };
                         option && myChart.setOption(option);
 
                     </script>

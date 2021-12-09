@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/oksub.css"/>
 </head>
-<body class="page-fill">
+<body class="page-fill" style="overflow: hidden">
     <div class="msg alert alert-danger" style="opacity: 0"></div>
     <div class="page-fill" id="login">
-        <form action="/userLogin/index" method="post" class="layui-form" style="opacity: 0.9;filter: blur(0.3px);">
+        <form action="/userLogin/index" method="post" class="layui-form" style="opacity: 0.9;filter: blur(0.3px);z-index: 10">
             <div class="login_face"><img src="/static/images/logo.jpg"></div>
             <div class="layui-form-item input-item">
                 <label for="userCount" style="font-weight:0">账号</label>
@@ -28,12 +28,15 @@
                 <a href="/userForget/forget">忘记密码？</a>
             </div>
         </form>
+
+        <canvas class="firefly-canvas" id="firefly"></canvas>
     </div>
 </body>
 
 <script src="/lib/layui/layui.js"></script>
 <script src="/static/js/loginerorr.js"></script>
 <script src="/static/js/loginform.js"></script>
+<script src="/static/js/firefly.js"></script>
 <script>
 
     layui.use('layer', function() {

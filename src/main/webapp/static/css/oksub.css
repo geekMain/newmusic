@@ -74,6 +74,14 @@
 .seting-pass .layui-table th{text-align:center}
 .seting-pass .changePwd{width:100%;max-width: 480px;}
 
+/*响应样式*/
+@media screen and (max-width:750px){
+	.ok-in-hide-md{display:none!important}
+}
+@media screen and (max-width:548px){
+	.ok-in-hide-xs,[ok-pc-in-show]{display:none!important}
+}
+
 .msg{
 	position: fixed;
 	z-index: 9999;
@@ -84,12 +92,17 @@
 }
 
 
-/*响应样式*/
-@media screen and (max-width:750px){
-	.ok-in-hide-md{display:none!important}
-}
-@media screen and (max-width:548px){
-	.ok-in-hide-xs,[ok-pc-in-show]{display:none!important}
+.firefly-canvas{
+	z-index: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-moz-backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	backface-visibility:hidden;
+	will-change:transform;
 }
 
 
