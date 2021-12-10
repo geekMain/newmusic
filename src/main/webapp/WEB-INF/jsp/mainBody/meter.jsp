@@ -100,13 +100,39 @@
                             )
                             return music;
                         }
+                        function random(min,max){
+                            return Math.random()*(max-min)+min;
+                        }
                         function musicData(){
                             var nameDataArr = new Array();
                             var countDataArr = new Array();
+                            var x = random(10,$('#music').width()-10)
+                            var y = random(10,$('#music').height()-10)
                             var music = musicList()
+                            var color = ['#ff4d4f','#a8071a',
+                                '#ff9c6e','#ad2102',
+                                '#ffc069','#ad4e00',
+                                '#ffd666','#ad6800',
+                                '#fff566','#ad8b00',
+                                '#d3f261','#5b8c00',
+                                '#95de64','#237804',
+                                '#5cdbd3','#006d75',
+                                '#69c0ff','#0050b3',
+                                '#85a5ff','#10239e',
+                                '#b37feb','#391085',
+                                '#ff85c0','#9e1068'
+                            ]
                             $.each(music, function (i, music) {
-                                nameDataArr[i] = music.musicName;
-                                countDataArr[i] = music.musicCount;
+                                nameDataArr[i] = {
+                                    name: music.musicName,
+                                    value: music.musicCount,
+                                }
+                                countDataArr[i] = {
+                                    offset: [x,y],
+                                    symbolSize: music.musicCount,
+                                    opacity: 0.95,
+                                    color: color[parseInt(random(0,23))],
+                                }
                             });
                             return new Array(nameDataArr,countDataArr)
                         }
@@ -121,76 +147,19 @@
                             myChart.resize();
                         };
 
-                        var plantCap = [
-                            {
-                                name: musicData()[0][0],
-                                value: musicData()[1][0],
-                            },
-                            {
-                                name: musicData()[0][1],
-                                value: musicData()[1][1],
-                            },
-                            {
-                                name: musicData()[0][2],
-                                value: musicData()[1][2],
-                            },
-                            {
-                                name: musicData()[0][3],
-                                value: musicData()[1][3],
-                            },
-                            {
-                                name: musicData()[0][4],
-                                value: musicData()[1][4],
-                            },
-                        ];
-
-
-
-                        var datalist = [
-                            {
-                                offset: [56, 48],
-                                symbolSize: musicData()[1][0],
-                                opacity: 0.95,
-                                color: 'rgba(104,184,55, 1)',
-                            },
-                            {
-                                offset: [20, 43],
-                                symbolSize: musicData()[1][1],
-                                opacity: 0.84,
-                                color: 'rgba(104,184,55, 0.95)',
-                            },
-                            {
-                                offset: [83, 35],
-                                symbolSize: musicData()[1][2],
-                                opacity: 0.8,
-                                color: 'rgba(104,184,55, 0.95)',
-                            },
-                            {
-                                offset: [36, 30],
-                                symbolSize: musicData()[1][3],
-                                opacity: 0.75,
-                                color: 'rgba(104,184,55, 0.90)',
-                            },
-                            {
-                                offset: [64, 20],
-                                symbolSize: musicData()[1][4],
-                                opacity: 0.7,
-                                color: 'rgba(104,184,55, 0.90)',
-                            },
-                        ];
                         var datas = [];
-                        for (var i = 0; i < plantCap.length; i++) {
-                            var item = plantCap[i];
-                            var itemToStyle = datalist[i];
+                        for (var i = 0; i < musicData()[0].length; i++) {
+                            var item = musicData()[0][i];
+                            var itemToStyle = musicData()[1][i];
                             datas.push({
-                                name: item.value + '\n' + '  ' + '\n'+item.name,
+                                name: '\n' +item.value + '\n' + '  ' + '\n'+item.name,
                                 value: itemToStyle.offset,
                                 symbolSize: itemToStyle.symbolSize * 2,
                                 label: {
                                     normal: {
                                         textStyle: {
                                             fontSize: 14,
-                                            color: '#1bf084',
+                                            color: itemToStyle.color,
                                         },
                                     },
                                 },
@@ -223,7 +192,7 @@
                                     type: 'value',
                                     show: false,
                                     min: 0,
-                                    max: 100,
+                                    max: $('#music').width(),
                                     nameLocation: 'middle',
                                     nameGap: 5,
                                 },
@@ -233,14 +202,14 @@
                                     gridIndex: 0,
                                     min: 0,
                                     show: false,
-                                    max: 100,
+                                    max: $('#music').height(),
                                     nameLocation: 'middle',
                                     nameGap: 30,
                                 },
                             ],
                             series: [
                                 {
-                                    type: 'scatter',
+                                    type: 'effectScatter',
                                     symbol: 'circle',
                                     symbolSize: 120,
                                     label: {
@@ -272,7 +241,7 @@
                     </script>
 
                     <script>
-                        window.setInterval(musicData, 1000);
+                        window.setInterval(musicList, 1000);
                     </script>
 
                 </div>
