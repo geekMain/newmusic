@@ -128,7 +128,7 @@
                                     value: music.musicCount,
                                 }
                                 countDataArr[i] = {
-                                    offset: [x,y],
+                                    offset: [parseInt(x),parseInt(y)],
                                     symbolSize: music.musicCount,
                                     opacity: 0.95,
                                     color: color[parseInt(random(0,23))],
@@ -164,7 +164,7 @@
                                 var item = musicData()[0][i];
                                 var itemToStyle = musicData()[1][i];
                                 datas.push({
-                                    name: '\n' +item.value + '\n' + '  ' + '\n'+item.name,
+                                    name: '\n\n' + item.name,
                                     value: itemToStyle.offset,
                                     symbolSize: itemToStyle.symbolSize * 2,
                                     label: {
@@ -196,9 +196,10 @@
                             tooltip: {
                                 backgroundColor: 'rgba(255,255,255,0.9)',
                                 formatter: function (param) {
-                                    var value = param.value;
                                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-                                        + param.name
+                                        + '<p>' + '歌名:' + param.name + '</p>'
+                                        + '<p>' + '热度:' + param.hotcount + '</p>'
+                                        + '<p>' + '坐标:' + param.value + '</p>'
                                         + '</div>'
                                 }
                             },
@@ -208,7 +209,7 @@
                                     type: 'value',
                                     show: false,
                                     min: 0,
-                                    max: $('#music').width(),
+                                    max: $('#music').width()+10,
                                     nameLocation: 'middle',
                                     nameGap: 5,
                                 },
@@ -218,7 +219,7 @@
                                     gridIndex: 0,
                                     min: 0,
                                     show: false,
-                                    max: $('#music').height(),
+                                    max: $('#music').height()+10,
                                     nameLocation: 'middle',
                                     nameGap: 30,
                                 },
@@ -241,6 +242,15 @@
                             ],
                         };
 
+                        setInterval(function () {
+                            myChart.setOption({
+                                series: [
+                                    {
+                                        data: addData()
+                                    }
+                                ]
+                            });
+                        }, 10000);
 
                         option && myChart.setOption(option);
 
@@ -250,7 +260,7 @@
                     <script>
                         window.setInterval(function () {
                             musicList();
-                        }, 1000);
+                        }, 10000);
                     </script>
 
                 </div>
