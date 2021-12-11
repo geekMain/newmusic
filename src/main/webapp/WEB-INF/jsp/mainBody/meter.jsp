@@ -106,7 +106,7 @@
                         function musicData(){
                             var nameDataArr = new Array();
                             var countDataArr = new Array();
-                            var x = random(10,$('#music').width()-10)
+                            var x = random(10,$('#music').width()-15)
                             var y = random(10,$('#music').height()-10)
                             var music = musicList()
                             var color = ['#ff4d4f','#a8071a',
@@ -133,7 +133,7 @@
                                     opacity: 0.95,
                                     color: color[parseInt(random(0,23))],
                                 }
-                            });
+                            })
                             return new Array(nameDataArr,countDataArr)
                         }
                     </script>
@@ -147,29 +147,45 @@
                             myChart.resize();
                         };
 
-                        var datas = [];
-                        for (var i = 0; i < musicData()[0].length; i++) {
-                            var item = musicData()[0][i];
-                            var itemToStyle = musicData()[1][i];
-                            datas.push({
-                                name: '\n' +item.value + '\n' + '  ' + '\n'+item.name,
-                                value: itemToStyle.offset,
-                                symbolSize: itemToStyle.symbolSize * 2,
-                                label: {
-                                    normal: {
-                                        textStyle: {
-                                            fontSize: 14,
-                                            color: itemToStyle.color,
+                        function move(x,y,vx,vy){
+                            this.x+=this.vx;
+                            this.y+=this.vy;
+                            if(this.x-this.r<0||this.x+this.r>w){
+                                this.vx=-this.vx;
+                            }
+                            if(this.y-this.r<0||this.y+this.r>h){
+                                this.vy=-this.vy;
+                            }
+                        }
+
+                        function addData() {
+                            var datas = [];
+                            for (var i = 0; i < musicData()[0].length; i++) {
+                                var item = musicData()[0][i];
+                                var itemToStyle = musicData()[1][i];
+                                datas.push({
+                                    name: '\n' +item.value + '\n' + '  ' + '\n'+item.name,
+                                    value: itemToStyle.offset,
+                                    symbolSize: itemToStyle.symbolSize * 2,
+                                    label: {
+                                        normal: {
+                                            show: true,
+                                            formatter: '{b}',
+                                            textStyle: {
+                                                fontSize: 14,
+                                                color: itemToStyle.color,
+                                            },
                                         },
                                     },
-                                },
-                                itemStyle: {
-                                    normal: {
-                                        color: itemToStyle.color,
-                                        opacity: itemToStyle.opacity,
+                                    itemStyle: {
+                                        normal: {
+                                            color: itemToStyle.color,
+                                            opacity: itemToStyle.opacity,
+                                        },
                                     },
-                                },
-                            });
+                                });
+                            }
+                            return datas;
                         }
                         option = {
                             grid: {
@@ -178,7 +194,7 @@
                                 bottom: 10,
                             },
                             tooltip: {
-                                backgroundColor: 'rgba(255,255,255,0.7)',
+                                backgroundColor: 'rgba(255,255,255,0.9)',
                                 formatter: function (param) {
                                     var value = param.value;
                                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
@@ -212,36 +228,29 @@
                                     type: 'effectScatter',
                                     symbol: 'circle',
                                     symbolSize: 120,
-                                    label: {
-                                        normal: {
-                                            show: true,
-                                            formatter: '{b}',
-                                            color: '#fff',
-                                            textStyle: {
-                                                fontSize: '20',
-                                            },
-                                        },
-                                    },
                                     itemStyle: {
                                         normal: {
                                             borderWidth: '2',
                                             borderType: 'solid',
-                                            borderColor: '#fff',
-                                            color: '#68b837',
                                             shadowColor: '#68b837',
                                             shadowBlur: 10,
                                         },
                                     },
-                                    data: datas,
+                                    data: addData(),
                                 },
                             ],
                         };
+
+
                         option && myChart.setOption(option);
+
 
                     </script>
 
                     <script>
-                        window.setInterval(musicList, 1000);
+                        window.setInterval(function () {
+                            musicList();
+                        }, 1000);
                     </script>
 
                 </div>
@@ -321,7 +330,7 @@
         <div class="layui-col-md6">
             <div class="layui-card">
                 <div class="ok-card-body ">
-                    <div class="map-china" id="userLocationMap"></div>
+                    <div class="map-china" id="main"></div>
                 </div>
             </div>
         </div>
