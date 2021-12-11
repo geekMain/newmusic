@@ -125,7 +125,7 @@
                             $.each(music, function (i, music) {
                                 nameDataArr[i] = {
                                     name: music.musicName,
-                                    value: music.musicCount,
+                                    count: music.musicCount,
                                 }
                                 countDataArr[i] = {
                                     offset: [parseInt(x),parseInt(y)],
@@ -167,6 +167,10 @@
                                     name: '\n\n' + item.name,
                                     value: itemToStyle.offset,
                                     symbolSize: itemToStyle.symbolSize * 2,
+                                    item: {
+                                        id: '1',
+                                        singer: '123',
+                                    },
                                     label: {
                                         normal: {
                                             show: true,
@@ -198,7 +202,7 @@
                                 formatter: function (param) {
                                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
                                         + '<p>' + '歌名:' + param.name + '</p>'
-                                        + '<p>' + '热度:' + param.hotcount + '</p>'
+                                        + '<p>' + '热度:' + param.data.symbolSize/2 + '</p>'
                                         + '<p>' + '坐标:' + param.value + '</p>'
                                         + '</div>'
                                 }
