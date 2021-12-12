@@ -1,6 +1,7 @@
 package com.music.dao;
 
 import com.music.bean.Music;
+import com.music.bean.Singer;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -24,4 +25,6 @@ public interface MusicDao {
 //  int insertMusic(Map<String, Object> map);
 
   List<Music> queryAllSongs();
+
+  List<Singer> queryAllSinger();
 }

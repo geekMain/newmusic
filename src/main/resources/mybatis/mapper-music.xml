@@ -17,5 +17,11 @@
 
 
         </select>
+    <select id="queryAllSinger" resultType="singer">
+            select singer_id as singerId,
+                   singer_name as singerName,
+                   nationality_id as nationalityId
+            from singer
+    </select>
 
 </mapper>

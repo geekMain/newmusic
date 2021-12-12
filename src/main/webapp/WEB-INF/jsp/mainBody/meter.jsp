@@ -100,6 +100,20 @@
                             )
                             return music;
                         }
+                        function singerList(){
+                            var singer;
+                            $.ajax({
+                                    url:"/adminIndex/allSingers",
+                                    type: "get",
+                                    async: false,
+                                    dataType: "json",
+                                    success:function (data) {
+                                        singer = data;
+                                    }
+                                }
+                            )
+                            return singer;
+                        }
                         function random(min,max){
                             return Math.random()*(max-min)+min;
                         }
@@ -167,10 +181,7 @@
                                     name: '\n\n' + item.name,
                                     value: itemToStyle.offset,
                                     symbolSize: itemToStyle.symbolSize * 2,
-                                    item: {
-                                        id: '1',
-                                        singer: '123',
-                                    },
+                                    item: musicList()[i],
                                     label: {
                                         normal: {
                                             show: true,
@@ -200,9 +211,13 @@
                             tooltip: {
                                 backgroundColor: 'rgba(255,255,255,0.9)',
                                 formatter: function (param) {
+                                    var singer = singerList();
                                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-                                        + '<p>' + '歌名:' + param.name + '</p>'
-                                        + '<p>' + '热度:' + param.data.symbolSize/2 + '</p>'
+                                        + '<p>' + 'id:' + param.data.item.musicId + '</p>'
+                                        + '<p>' + '歌手:' + singer.singerName + '</p>'
+                                        + '<p>' + '歌名:' + param.data.item.musicName + '</p>'
+                                        + '<p>' + '热度:' + param.data.item.musicCount + '</p>'
+                                        + '<p>' + '时长:' + param.data.item.musicLength + '</p>'
                                         + '<p>' + '坐标:' + param.value + '</p>'
                                         + '</div>'
                                 }
@@ -254,7 +269,7 @@
                                     }
                                 ]
                             });
-                        }, 10000);
+                        }, 30000);
 
                         option && myChart.setOption(option);
 

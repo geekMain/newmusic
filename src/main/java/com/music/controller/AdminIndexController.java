@@ -3,7 +3,6 @@ package com.music.controller;
 import com.music.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,4 +17,12 @@ public class AdminIndexController {
     public Object dailyPopularityOfSongs(){
         return musicService.queryAllSongs();
     }
+
+    @RequestMapping("/allSingers")
+    @ResponseBody
+    public Object allSingers(){
+        return musicService.queryAllSinger();
+    }
+
+
 }
