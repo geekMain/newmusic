@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.SingerDao">
+    <resultMap id="rMap" type="singer">
+        <id column="singer_id" property="singerId"></id>
+        <result column="singer_name" property="singerName"></result>
+        <result column="nationality_id" property="nationalityId"></result>
+    </resultMap>
+
+    <select id="queryAllSinger" resultMap="rMap">
+        SELECT * FROM music.singer
+    </select>
+
+</mapper>

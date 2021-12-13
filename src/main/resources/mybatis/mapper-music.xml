@@ -3,25 +3,40 @@
                 PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.music.dao.MusicDao">
-        <select id="queryAllSongs" resultType="music">
-            select music_id as musicId,
-                   style_id as styleId,
-                   singer_id as singerId,
-                   music_name as musicName,
-                   music_length as musicLength,
-                   music_img as musicImg,
-                   music_file as musicFile,
-                   music_text_name as musicTextName,
-                   music_count as musicCount
-            from music
+    <!--
+        给表中的昵称 修改成和类中的名称相同
+    -->
+    <resultMap id="rMap" type="music">
+        <id column="music_id" property="musicId"></id>
+        <result column="style_id" property="styleId"></result>
+        <result column="singer_id" property="singerId"></result>
+        <result column="music_name" property="musicName"></result>
+        <result column="music_length" property="musicLength"></result>
+        <result column="music_img" property="musicImg"></result>
+        <result column="music_file" property="musicFile"></result>
+        <result column="music_text_name" property="musicTextName"></result>
+        <result column="music_count" property="musicCount"></result>
+    </resultMap>
 
-
-        </select>
-    <select id="queryAllSinger" resultType="singer">
-            select singer_id as singerId,
-                   singer_name as singerName,
-                   nationality_id as nationalityId
-            from singer
+    <!--获取当前表中的所有内容-->
+     <select id="queryAllSongs" resultMap="rMap">
+         select * from music.music
     </select>
+
+    <!--获取到歌手的全部信息-->
+    <select id="queryAllSinger" resultMap="rMap">
+        select singer_id as singerId,
+               singer_name as singerName,
+               nationality_id as nationalityId
+        from music.singer
+    </select>
+
+    <!--增加数据 添加的数据：风格,歌手,歌曲,歌曲时长,歌曲图片,歌曲文件,歌词文件名-->
+    <insert id="insertMusic" parameterType="map">
+        insert into music.music
+            (style_id,singer_id,music_name,music_length,music_img,music_file,music_text_name)
+        values
+            (#{styleId},#{singerId},#{musicName},#{musicLength},#{musicImg},#{musicFile},#{musicTextName})
+    </insert>
 
 </mapper>
