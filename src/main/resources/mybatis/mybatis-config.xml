@@ -4,12 +4,7 @@
 
     <typeAliases>
         <!-- 给单个的类起别名-->
-        <typeAlias type="com.music.bean.UserLogin" alias="userLogin"/>
-
-        <typeAlias type="com.music.bean.User" alias="user"/>
-
-        <typeAlias type="com.music.bean.Music" alias="music"/>
-        <typeAlias type="com.music.bean.Singer" alias="singer"/>
+        <package name="com.music.bean"/>
 
     </typeAliases>
 </configuration>
