@@ -5,4 +5,5 @@ import com.music.bean.UserLogin;
 
 public interface UserDao {
     public User getUser(UserLogin userLogin);
+
 }

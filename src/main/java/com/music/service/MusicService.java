@@ -10,5 +10,4 @@ public interface MusicService {
     List<Music> queryAllSongs();
 
     List<Singer> queryAllSinger();
-
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace:配置名称空间，对配置的statement进行分类管理
+        此时名称可以任意
+        当使用Mapper代理时，namespace具有特殊的含义与功能
+ -->
+<mapper namespace="com.music.dao.SongListDao">
+    <resultMap id="rMap" type="songlist">
+        <id column="song_id" property="songId"></id>
+        <result column="user_id" property="userId"></result>
+        <result column="song_name" property="songName"></result>
+        <result column="song_create_time" property="songCreateTime"></result>
+        <result column="song_introduce" property="songIntroduce"></result>
+        <result column="song_count" property="songCount"></result>
+    </resultMap>
+    <select id="getSongListAll" resultMap="rMap">
+        select * from music.song_list
+    </select>
+
+    <insert id="insertSongList" parameterType="map">
+        insert into music.music
+        (style_id,singer_id,music_name,music_length,music_img,music_file,music_text_name)
+        values
+        (#{styleId},#{singerId},#{musicName},#{musicLength},#{musicImg},#{musicFile},#{musicTextName})
+    </insert>
+
+</mapper>
