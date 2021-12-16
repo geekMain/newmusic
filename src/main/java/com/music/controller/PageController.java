@@ -1,6 +1,7 @@
 package com.music.controller;
 
 import com.music.bean.MusicStyle;
+import com.music.service.AlbumService;
 import com.music.service.MusicService;
 import com.music.service.MusicStyleService;
 import com.music.service.SingerService;
@@ -19,7 +20,8 @@ public class PageController {
     SingerService singer;
     @Autowired
     MusicStyleService style;
-
+    @Autowired
+    AlbumService album;
 
     @RequestMapping("/admin")
     public String admin(){ return "admin";}
@@ -34,8 +36,16 @@ public class PageController {
         return "mainBody/userMana";
     }
 
+    //专辑管理--hqr
     @RequestMapping("/albumMana")
-    public String albumMana(){
+    public String albumMana(Model model){
+
+        //album列表
+        model.addAttribute("list",album.getAlbumAll());
+        //添加album
+        model.addAttribute("albumadd",album.insertAlbum());
+        /*model.addAttribute("list2",singer.queryAllSinger());
+        model.addAttribute("list3",style.queryAllStyle());*/
         return "mainBody/albumMana";
     }
 

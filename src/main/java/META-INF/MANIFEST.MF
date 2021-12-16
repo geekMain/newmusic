@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: junit-platform-engine-1.8.2.jar activation-1.1.jar javax.mai
+ l-1.5.6.jar javax.servlet-api-3.1.0.jar spring-context-support-5.2.14.R
+ ELEASE.jar jackson-core-2.12.3.jar spring-core-5.2.14.RELEASE.jar c3p0-
+ 0.9.5.2.jar junit-jupiter-5.8.2.jar opentest4j-1.2.0.jar spring-tx-5.2.
+ 14.RELEASE.jar apiguardian-api-1.1.2.jar spring-jdbc-5.2.14.RELEASE.jar
+  jackson-annotations-2.12.3.jar mybatis-spring-2.0.6.jar mysql-connecto
+ r-java-8.0.18.jar junit-jupiter-params-5.8.2.jar protobuf-java-3.6.1.ja
+ r spring-webmvc-5.2.14.RELEASE.jar junit-platform-commons-1.8.2.jar jst
+ l-1.2.jar mchange-commons-java-0.2.11.jar lombok-1.18.20.jar spring-web
+ -5.2.14.RELEASE.jar spring-beans-5.2.14.RELEASE.jar mybatis-3.4.5.jar s
+ pring-aop-5.2.14.RELEASE.jar commons-email-1.5.jar spring-jcl-5.2.14.RE
+ LEASE.jar jackson-databind-2.12.3.jar junit-jupiter-engine-5.8.2.jar ju
+ nit-jupiter-api-5.8.2.jar spring-context-5.2.14.RELEASE.jar spring-expr
+ ession-5.2.14.RELEASE.jar
+
