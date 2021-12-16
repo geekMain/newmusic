@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.AlbumDao">
+    <!--
+            给表中的昵称 修改成和类中的名称相同
+            private Integer albumId;//专辑id
+            private String albumName;//专辑名字
+            private Integer albumSingerId;//专辑歌手id
+            private String issuingReleaseTime;//专辑发布时间
+            private Integer companyId;//专辑发行公司
+            private String introduce;//专辑介绍
+
+        -->
+    <resultMap id="rMap" type="album">
+        <id column="album_id" property="albumId"></id>
+        <result column="album_name" property="albumName"></result>
+        <result column="album_singer_id" property="albumSingerId"></result>
+        <result column="album_release_time" property="issuingReleaseTime"></result>
+        <result column="Issuing_company_id" property="companyId"></result>
+        <result column="album_introduce" property="introduce"></result>
+    </resultMap>
+    <!--获取当前表中的所有内容-->
+    <select id="getAlbumAll" resultMap="rMap">
+        select * from music.album
+    </select>
+    <!--增加数据 添加的数据：风格,歌手,歌曲,歌曲时长,歌曲图片,歌曲文件,歌词文件名-->
+    <insert id="insertAlbum" parameterType="map">
+        insert into music.album
+        (album_id,album_name,album_singer_id,album_release_time,Issuing_company_id,album_introduce)
+        values
+        (#{albumId},#{albumName},#{albumSingerId},#{issuingReleaseTime},#{companyId},#{introduce})
+    </insert>
+</mapper>

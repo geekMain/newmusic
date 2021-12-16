@@ -5,6 +5,5 @@
     <typeAliases>
         <!-- 给单个的类起别名-->
         <package name="com.music.bean"/>
-
     </typeAliases>
 </configuration>
