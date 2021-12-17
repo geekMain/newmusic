@@ -115,6 +115,7 @@
                         歌曲管理
                     </a>
                 </li>
+
                 <li class="layui-nav-item">
                     <a href="javascript:">
                         <i class="fa fa-frown-o" aria-hidden="true"></i>
