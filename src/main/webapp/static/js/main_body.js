@@ -1,3 +1,4 @@
+//菜单显示
 var main_body = document.getElementById("main-body");
 var main_show = document.getElementById("mainBody-show");
 
@@ -11,3 +12,8 @@ var mainBodyOnOff = true;
         }
         mainBodyOnOff = !mainBodyOnOff;
     }
+
+//刷新
+$("#refresh").click(function(){
+   main.src = main.src
+});

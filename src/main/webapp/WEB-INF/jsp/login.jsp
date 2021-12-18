@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/static/css/oksub.css"/>
 </head>
 <body class="page-fill" style="overflow: hidden">
-    <div class="msg alert alert-danger" style="opacity: 0"></div>
     <div class="page-fill" id="login">
         <form action="/userLogin/index" method="post" class="diy-input layui-form">
             <div class="login_face"><img src="/static/images/logo.jpg"></div>

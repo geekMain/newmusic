@@ -8,10 +8,6 @@ for (let i = 0; i < li_list.length; i++) {
         for (let j = 0; j < li_list.length; j++) {
             if (j != i){
                 li_list[j].classList.remove("layui-this");
-            }
-        }
-        if (i == li_list.length-1){
-            for (let j = 0; j < userSubpage_list.length; j++) {
                 userSubpage_list[j].classList.remove("layui-this");
             }
         }

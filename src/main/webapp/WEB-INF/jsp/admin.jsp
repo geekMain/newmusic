@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/okadmin.css">
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"/>
-
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body class="layui-layout-body">
-
+<!--加载-->
 <div id="main-body" class="layui-layout layui-layout-admin okadmin blue_theme ok-left-hide">
     <!--头部导航-->
     <div class="layui-header okadmin-header">
@@ -27,7 +27,7 @@
                 <input type="text" placeholder="搜索..." class="layui-input layui-input-search"/>
             </li>
             <li class="layui-nav-item">
-                <a class="ok-refresh" href="javascript:" title="刷新">
+                <a id="refresh" class="ok-refresh" href="javascript:" title="刷新">
                     <i class="fa fa-rotate-right" aria-hidden="true"></i>
                 </a>
             </li>
@@ -176,7 +176,6 @@
             </div>
         </div>
     </div>
-
     <!--底部信息-->
     <div class="layui-footer okadmin-text-center">
         新音乐后台管理
