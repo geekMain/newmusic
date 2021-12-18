@@ -27,11 +27,14 @@ public class UserLoginController {
     @RequestMapping(value ="/index",method = RequestMethod.POST)
     public String login(UserLogin user, Model model){
         if (userLoginService.getUserLogin(user) == null){
-            model.addAttribute("msg","layer.msg('账号或密码错误')");
+            model.addAttribute("msg","layer.msg('账号或密码错误！')");
             return "login";
         }
-        User user1 = userService.getUser(userLoginService.getUserLogin(user));
-        model.addAttribute("user",user1);
+        if (userLoginService.getUserAdmin(userLoginService.getUserLogin(user).getId()) == null){
+            model.addAttribute("msg","layer.msg('用户不是管理员！')");
+            return "login";
+        }
+        model.addAttribute("user",userService.getUser(userLoginService.getUserLogin(user)));
         return "admin";
     }
 }

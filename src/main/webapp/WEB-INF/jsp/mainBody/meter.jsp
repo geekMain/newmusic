@@ -100,20 +100,6 @@
                             )
                             return music;
                         }
-                        function singerList(){
-                            var singer;
-                            $.ajax({
-                                    url:"/adminIndex/allSingers",
-                                    type: "get",
-                                    async: false,
-                                    dataType: "json",
-                                    success:function (data) {
-                                        singer = data;
-                                    }
-                                }
-                            )
-                            return singer;
-                        }
                         function random(min,max){
                             return Math.random()*(max-min)+min;
                         }
@@ -211,10 +197,9 @@
                             tooltip: {
                                 backgroundColor: 'rgba(255,255,255,0.9)',
                                 formatter: function (param) {
-                                    var singer = singerList();
                                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
                                         + '<p>' + 'id:' + param.data.item.musicId + '</p>'
-                                        + '<p>' + '歌手:' + singer.singerName + '</p>'
+                                        + '<p>' + '歌手id:' + param.data.item.singerId + '</p>'
                                         + '<p>' + '歌名:' + param.data.item.musicName + '</p>'
                                         + '<p>' + '热度:' + param.data.item.musicCount + '</p>'
                                         + '<p>' + '时长:' + param.data.item.musicLength + '</p>'
@@ -252,7 +237,7 @@
                                         normal: {
                                             borderWidth: '2',
                                             borderType: 'solid',
-                                            shadowColor: '#68b837',
+                                            shadowColor: '#fff',
                                             shadowBlur: 10,
                                         },
                                     },
@@ -269,7 +254,7 @@
                                     }
                                 ]
                             });
-                        }, 30000);
+                        }, 60000);
 
                         option && myChart.setOption(option);
 
@@ -279,7 +264,7 @@
                     <script>
                         window.setInterval(function () {
                             musicList();
-                        }, 10000);
+                        }, 60000);
                     </script>
 
                 </div>

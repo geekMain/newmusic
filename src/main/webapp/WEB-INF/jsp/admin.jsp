@@ -91,7 +91,7 @@
             </div>
             <!--左侧导航菜单-->
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">
-                <li class="layui-nav-item layui-this">
+                <li class="layui-nav-item">
                     <a href="javascript:">
                         <i class="fa fa-globe" aria-hidden="true"></i>
                         仪表盘
@@ -115,7 +115,6 @@
                         歌曲管理
                     </a>
                 </li>
-
                 <li class="layui-nav-item">
                     <a href="javascript:">
                         <i class="fa fa-frown-o" aria-hidden="true"></i>

@@ -16,4 +16,9 @@ public class UserLoginServiceImpl implements UserLoginService {
     public UserLogin getUserLogin(UserLogin userLogin) {
         return userLoginDao.getUserLogin(userLogin);
     }
+
+    @Override
+    public Integer getUserAdmin(Integer id) {
+        return userLoginDao.getUserAdmin(id);
+    }
 }

@@ -1,6 +1,5 @@
 package com.music.controller;
 
-import com.music.bean.MusicStyle;
 import com.music.service.AlbumService;
 import com.music.service.MusicService;
 import com.music.service.MusicStyleService;
@@ -8,7 +7,6 @@ import com.music.service.SingerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -31,8 +29,14 @@ public class PageController {
         return "mainBody/meter";
     }
 
+    //用户管理
     @RequestMapping("/userMana")
-    public String userMana(){
+    public String userMana(Model model){
+//
+//        model.addAttribute("list",user.getUserAll());
+//
+//        model.addAttribute("useradd",user.insertUser());
+
         return "mainBody/userMana";
     }
 

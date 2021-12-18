@@ -51,7 +51,7 @@
 #login .layui-form-item label{position:absolute;color:#757575;left:10px;top:9px;line-height:20px;background:0 0;padding:0 5px;font-size:14px;cursor:text}
 #login #code{padding-right:110px}
 #login .captcha-box .img{position:absolute;top:1px;bottom:1px;right:1px;cursor:pointer;width:100px;background:#c4e1ce}
-#login .layui-form-item input{background:#fff!important}
+/*#login .layui-form-item input{background:#fff!important}*/
 #login .layui-form-item input,#login .layui-form-item label{transition:all .3s ease-in-out;-webkit-transition:all .3s ease-in-out}
 #login .layui-form-item input::placeholder{color:transparent!important}
 #login .layui-form-item.layui-input-focus input::placeholder{color:#757575!important}
@@ -105,4 +105,17 @@
 	will-change:transform;
 }
 
+#login form.diy-input{
+	z-index: 10;
+	border-radius: 20px;
+	/* 设置渐变 */
+	background: linear-gradient(
+			to right bottom,
+			rgba(255,255,255,.6),
+			rgba(255,255,255,.3),
+			rgba(255,255,255,.2)
+	);
+	/* 重点：使元素背景模糊化 */
+	backdrop-filter: blur(11px);
+}
 

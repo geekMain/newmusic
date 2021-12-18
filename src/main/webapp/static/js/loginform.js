@@ -11,3 +11,12 @@ for (let i = 0; i < input_list.length; i++) {
         }
     })
 }
+
+setInterval(function (){
+    for (let i = 0; i < input_list.length; i++) {
+        if (input_list[i].value.length > 0){
+            div_list[i].classList.add("layui-input-focus");
+        }
+    }
+},100)
+
