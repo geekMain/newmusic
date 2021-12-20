@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor  /*无参构造器*/
@@ -18,6 +19,6 @@ public class Comment {
     private String comContext;//评论内容
     private Integer objId;//歌单或者歌曲id
     private Integer comType;//评论分类（歌单1，歌曲2）
-    private Time comTime;//评论的时间
+    private Timestamp comTime;//评论的时间
     private Integer comNumber;//评论的点赞数量
 }

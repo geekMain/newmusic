@@ -28,4 +28,9 @@ public class CommentServiceImpl implements CommentService {
   public List<Comment> PrintComment(Map<String, Object> map) {
     return commentDao.PrintComment(map);
   }
+
+  @Override
+  public int deleteComment(int id) {
+    return commentDao.deleteComment(id);
+  }
 }

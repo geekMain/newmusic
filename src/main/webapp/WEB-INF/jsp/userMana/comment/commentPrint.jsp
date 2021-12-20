@@ -17,6 +17,7 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="/lib/layui/layui.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
 </head>
 <body>
 <div>
@@ -28,6 +29,7 @@
             <th>评论的内容</th>
             <th>评论的时间</th>
             <th>点赞的数量</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +40,7 @@
                     <td>${music.comContext}</td>
                     <td>${music.comTime}</td>
                     <td>${music.comNumber}</td>
+                    <td><button class="layui-btn layui-btn-sm layui-btn-danger"><a href="/comment/del/${music.id}">删除</a></button></td>
                 </tr>
             </c:forEach>
         </tbody>

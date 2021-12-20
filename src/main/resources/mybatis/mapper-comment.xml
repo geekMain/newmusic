@@ -37,4 +37,13 @@
     <select id="PrintComment" resultMap="RMap" parameterType="map">
         SELECT * FROM music.sys_comment WHERE obj_id = #{id1} AND com_type = #{id2}
     </select>
+
+    <!--
+        删除
+        通过指定的 id 删除对应的评论
+        例如：DELETE FROM sys_comment WHERE id = 1
+    -->
+    <delete id="deleteComment" parameterType="_int">
+        DELETE FROM music.sys_comment WHERE id = #{id}
+    </delete>
 </mapper>

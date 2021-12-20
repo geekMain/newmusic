@@ -20,6 +20,8 @@ public class CommentController {
 
   @Autowired
   CommentService commentService;
+
+  //父页面传值给子页面
   @RequestMapping("/com/{id1}/{id2}")
   public String commentPrint(@PathVariable int id1, @PathVariable int id2, Model model){
 	System.out.println(id1);
@@ -30,5 +32,13 @@ public class CommentController {
 	List<Comment> comments = commentService.PrintComment(map);
 	model.addAttribute("list",comments);
 	return "userMana/comment/commentPrint";
+  }
+
+  //删除对应的评论
+  @RequestMapping("/del/{id}")
+  @ResponseBody
+  public String commentDelete(@PathVariable int id){
+		commentService.deleteComment(id);
+		return "<h1>删除成功</h1";
   }
 }
