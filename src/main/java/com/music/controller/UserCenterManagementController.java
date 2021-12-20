@@ -1,16 +1,27 @@
 package com.music.controller;
 
+import com.music.bean.Comment;
+import com.music.dao.CommentDao;
+import com.music.service.CommentService;
+import com.music.service.SingerService;
 import com.music.service.Songservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/userCenterMana")
 public class UserCenterManagementController {
     @Autowired
     Songservice Songlists;
+    @Autowired
+    CommentService commentService;
+    @Autowired
+    SingerService singer;
+
     @RequestMapping("/fanMana")
     public String fanMana(){
         return "userMana/fanMana";
@@ -35,8 +46,16 @@ public class UserCenterManagementController {
 
         return "userMana/songListMana";
     }
+    // 查看评论
     @RequestMapping("/commentMana")
-    public String commentMana(){
+    public String commentMana(Model model){
+        // 获取到单个对象
+        List<Comment> comments = commentService.NewAllComment();
+
+        model.addAttribute("list",comments);
+        model.addAttribute("list1",commentService.queryAllComment());
+        model.addAttribute("list3",Songlists.getSongListAll()); //歌单
+        model.addAttribute("list4",singer.queryAllSinger()); //歌曲
         return "userMana/commentMana";
     }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.CommentDao">
+    <resultMap id="RMap" type="comment">
+        <!--
+            对应
+        -->
+        <id column="id" property="id"></id>
+        <result column="user_id" property="userId"></result>
+        <result column="com_context" property="comContext"></result>
+        <result column="obj_id" property="objId"></result>
+        <result column="com_type" property="comType"></result>
+        <result column="com_time" property="comTime"></result>
+        <result column="com_number" property="comNumber"></result>
+    </resultMap>
+    <!--
+        查看所有评论
+    -->
+    <select id="queryAllComment" resultMap="RMap">
+        SELECT * FROM music.sys_comment;
+    </select>
+    <!--
+        查看指定 语句：
+        SELECT DISTINCT obj_id,com_type FROM sys_comment
+        DISTINCT：指定获取不同的数据
+    -->
+    <select id="NewAllComment" resultMap="RMap">
+        SELECT DISTINCT obj_id,com_type FROM music.sys_comment
+    </select>
+
+    <!--
+        通过指定的 obj_id和com_type 来进行查询结果
+        例如：SELECT * FROM sys_comment WHERE obj_id = 1 AND com_type = 1
+    -->
+    <select id="PrintComment" resultMap="RMap" parameterType="map">
+        SELECT * FROM music.sys_comment WHERE obj_id = #{id1} AND com_type = #{id2}
+    </select>
+</mapper>

@@ -31,7 +31,10 @@
         from music.singer
     </select>
 
-    <!--增加数据 添加的数据：风格,歌手,歌曲,歌曲时长,歌曲图片,歌曲文件,歌词文件名-->
+    <!--
+    增加数据 添加的数据：风格,歌手,歌曲,歌曲时长,歌曲图片,歌曲文件,歌词文件名
+    在mysql中可以访问
+    -->
     <insert id="insertMusic" parameterType="map">
         insert into music.music
             (style_id,singer_id,music_name,music_length,music_img,music_file,music_text_name)
