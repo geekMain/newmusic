@@ -13,4 +13,6 @@ public interface CommentDao {
   List<Comment> NewAllComment();
   //查询 通过指定的obj_id 和 com_type 来查询指定的数据
   List<Comment> PrintComment(Map<String,Object> map);
+  //删除 指定的 评论
+  int deleteComment(int id);
 }

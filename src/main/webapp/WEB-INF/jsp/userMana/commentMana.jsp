@@ -73,7 +73,7 @@
                 anim: 2,
                 shadeClose: false, //开启遮罩
                 moveOut: false,
-                area: ['500px', '300px'],
+                area: ['800px'],
                 content: '/comment/com/'+e+'/'+b
             });
         })
