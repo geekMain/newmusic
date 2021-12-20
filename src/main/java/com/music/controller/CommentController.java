@@ -22,8 +22,6 @@ public class CommentController {
   CommentService commentService;
   @RequestMapping("/com/{id1}/{id2}")
   public String commentPrint(@PathVariable int id1, @PathVariable int id2, Model model){
-	System.out.println(id1);
-	System.out.println(id2);
 	Map<String,Object> map = new HashMap<>();
 	map.put("id1",id1);
 	map.put("id2",id2);
