@@ -47,7 +47,7 @@ public class PageController {
         //album列表
         model.addAttribute("list",album.getAlbumAll());
         //添加album
-        model.addAttribute("albumadd",album.insertAlbum());
+//        model.addAttribute("albumadd",album.insertAlbum());
         /*model.addAttribute("list2",singer.queryAllSinger());
         model.addAttribute("list3",style.queryAllStyle());*/
         return "mainBody/albumMana";

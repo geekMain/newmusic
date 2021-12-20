@@ -24,7 +24,7 @@
     </select>
 
     <!--获取到歌手的全部信息-->
-    <select id="queryAllSinger" resultMap="rMap">
+    <select id="queryAllSinger" resultType="singer">
         select singer_id as singerId,
                singer_name as singerName,
                nationality_id as nationalityId
