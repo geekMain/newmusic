@@ -15,7 +15,6 @@ public class AdminIndexController {
     @RequestMapping("/dailyPopularityOfSongs")
     @ResponseBody
     public Object dailyPopularityOfSongs(){
-        System.out.println(musicService.queryAllSinger());
         return musicService.queryAllSongs();
     }
 

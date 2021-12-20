@@ -91,7 +91,7 @@
             </div>
             <!--左侧导航菜单-->
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-this">
                     <a href="javascript:">
                         <i class="fa fa-globe" aria-hidden="true"></i>
                         仪表盘
@@ -125,6 +125,7 @@
                     <a href="javascript:">
                         <i class="fa fa-cogs" aria-hidden="true"></i>
                         用户中心管理
+                        <i class="layui-icon layui-icon-down layui-nav-more"></i>
                     </a>
                     <ul id="userSubpage" style="background-color: #4476A7;display:none;">
                         <li class="layui-nav-item" style="flood-color: #4476A7;">
