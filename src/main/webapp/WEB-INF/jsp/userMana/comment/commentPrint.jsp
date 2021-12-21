@@ -40,9 +40,13 @@
                     <td>${music.comContext}</td>
                     <td>${music.comTime}</td>
                     <td>${music.comNumber}</td>
-                    <td><button class="layui-btn layui-btn-sm layui-btn-danger"><a href="/comment/del/${music.id}">删除</a></button></td>
+                    <td><button  class="layui-btn layui-btn-sm layui-btn-danger"><a href="/comment/del/${music.id}">删除</a></button></td>
                 </tr>
             </c:forEach>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>请不要随便删除</strong>------删除了，请自己到数据库中添加新的数据.
+            </div>
         </tbody>
     </table>
 </div>
