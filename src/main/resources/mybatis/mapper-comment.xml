@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.music.dao.CommentDao">
+    <!--二级缓存 -->
+    <cache eviction="FIFO" flushInterval="6000" readOnly="false" size="1024"></cache>
     <resultMap id="RMap" type="comment">
         <!--
             对应
