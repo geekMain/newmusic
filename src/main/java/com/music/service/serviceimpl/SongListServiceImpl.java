@@ -2,13 +2,13 @@ package com.music.service.serviceimpl;
 
 
 import com.music.bean.SongList;
+import com.music.bean.User;
 import com.music.dao.SongListDao;
 import com.music.service.Songservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class SongListServiceImpl implements Songservice {
@@ -21,7 +21,9 @@ public class SongListServiceImpl implements Songservice {
     }
 
     @Override
-    public int insertSongList(Map<String, Object> map) {
-        return songListDao.insertSongList(map);
+    public SongList getSongAll(int songId) {
+        return songListDao.getSongAll(songId);
     }
+
+
 }

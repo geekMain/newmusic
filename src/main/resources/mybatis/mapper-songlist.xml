@@ -16,15 +16,20 @@
         <result column="song_introduce" property="songIntroduce"></result>
         <result column="song_count" property="songCount"></result>
     </resultMap>
+
     <select id="getSongListAll" resultMap="rMap">
         select * from music.song_list
     </select>
 
-    <insert id="insertSongList" parameterType="map">
+    <select id="getSongAll" parameterType="map" resultMap="rMap">
+        select * from music.song_list where song_id = #{songId}
+    </select>
+
+    <!--<insert id="insertSongList" parameterType="map">
         insert into music.music
         (style_id,singer_id,music_name,music_length,music_img,music_file,music_text_name)
         values
         (#{styleId},#{singerId},#{musicName},#{musicLength},#{musicImg},#{musicFile},#{musicTextName})
-    </insert>
+    </insert>-->
 
 </mapper>

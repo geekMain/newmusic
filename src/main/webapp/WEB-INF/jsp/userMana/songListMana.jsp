@@ -22,7 +22,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">歌单管理</a>
+            <a class="navbar-brand" href="#">歌单模块</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- 基本功能 -->
@@ -33,13 +33,13 @@
                         </span><span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item"><a href="#1" data-toggle="tab">查看</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/userCenterMana/songListMana" >查看</a></li>
                 <li class="nav-item"><a href="#2" data-toggle="tab">添加</a></li>
             </ul>
             <!--搜素框-->
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/songList/songListOne" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="查找歌单">
+                    <input type="text" name="songId" class="form-control" placeholder="请输入要查询的歌单id">
                 </div>
                 <button type="submit" class="btn btn-default">查找</button>
             </form>
@@ -68,24 +68,6 @@
                     <td>${songlist.songCreateTime}</td>
                     <td>${songlist.songIntroduce}</td>
                     <td>${songlist.songCount}</td>
-                    <!--
-                        这里是需要在写一个c:forEach来进行便利
-                    -->
-                    <%--<td>
-                        <c:forEach var="stylemusic" items="${list3}">
-                            <c:if test="${music.singerId == stylemusic.styleId}">
-                                ${stylemusic.styleName}
-                            </c:if>
-                        </c:forEach>
-                    </td>
-                    <td>
-                        <c:forEach var="singer" items="${list2}">
-                            <c:if test="${music.singerId == singer.singerId}">
-                                ${singer.singerName}
-                            </c:if>
-                        </c:forEach>
-                    </td>--%>
-
                 </tr>
             </c:forEach>
             </tbody>
@@ -93,10 +75,10 @@
     </div>
     <div class="tab-pane fade" id="2">
         <div>
-            <form model="">
+            <form model="abbsong">
                 <div class="form-group">
                     <label for="exampleInputEmail1">歌单名称</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="歌单名称">
+                    <input type="" class="form-control" id="exampleInputEmail1" placeholder="歌单名称">
                 </div>
                 <div class="form-group">
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -115,7 +97,7 @@
                         <input type="checkbox">
                     </label>
                 </div>
-                <button type="submit" class="btn btn-default">添加</button>
+                <button type="submit" class="btn btn-default" >添加</button>
             </form>
         </div>
     </div>
