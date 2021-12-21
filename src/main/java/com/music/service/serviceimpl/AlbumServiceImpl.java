@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class AlbumServiceImpl implements AlbumService {
     @Autowired
@@ -19,7 +21,24 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public int insertAlbum() {
-        return albumDao.insertAlbum();
+    public Album getAlbumOne(Integer albumId) {
+        return albumDao.getAlbumOne(albumId);
     }
+
+    @Override
+    public int insertAlbum(Album album) {
+        return albumDao.insertAlbum(album);
+    }
+
+    @Override
+    public int deleteAlbum(Integer albumId) {
+        return albumDao.deleteAlbum(albumId);
+    }
+
+    @Override
+    public int updateAlbum(Map<String, Object> map) {
+        return albumDao.updateAlbum(map);
+    }
+
+
 }

@@ -23,13 +23,47 @@
     </resultMap>
     <!--获取当前表中的所有内容-->
     <select id="getAlbumAll" resultMap="rMap">
-        select * from music.album
+        select * from album
     </select>
-    <!--增加数据 添加的数据：风格,歌手,歌曲,歌曲时长,歌曲图片,歌曲文件,歌词文件名-->
+    <!--根据id查询album-->
+    <select id="getAlbumOne" parameterType="map" resultMap="rMap">
+        select * from album where album_id = #{albumId}
+    </select>
+    <!--添加album-->
     <insert id="insertAlbum" parameterType="map">
-        insert into music.album
-        (album_id,album_name,album_singer_id,album_release_time,Issuing_company_id,album_introduce)
+        insert into album
+        (album_name,album_singer_id,album_release_time,Issuing_company_id,album_introduce)
         values
-        (#{albumId},#{albumName},#{albumSingerId},#{issuingReleaseTime},#{companyId},#{introduce})
+        (#{albumName},#{albumSingerId},#{issuingReleaseTime},#{companyId},#{introduce})
     </insert>
+    <!--删除id删除album-->
+    <delete id="deleteAlbum" parameterType="int">
+        delete from album where album_id = #{albumId}
+    </delete>
+    <!--修改用户-->
+    <update id="updateAlbum" parameterType="map">
+        update album
+        <set>
+            <if test="album_name != null and album_name != ''">
+                album_name = #{albumName},
+            </if>
+            <if test="album_singer_id != null and album_singer_id != ''">
+                album_singer_id = #{albumSingerId},
+            </if>
+            <if test="album_release_time != null and album_release_time != ''">
+                album_release_time = #{issuingReleaseTime},
+            </if>
+            <if test="Issuing_company_id != null and Issuing_company_id != ''">
+                Issuing_company_id = #{companyId},
+            </if>
+            <!--<if test="album_introduce != null and album_introduce != ''">-->
+                album_introduce = #{introduce}
+            <!--</if>-->
+        </set>
+        <where>
+            <if test="album_id != null">
+                album_id = #{albumId};
+            </if>
+        </where>
+    </update>
 </mapper>
