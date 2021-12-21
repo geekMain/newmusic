@@ -44,5 +44,7 @@ public class UserContorller {
         model.addAttribute("userList",userService.getUserAll());
         return "mainBody/userMana";
     }
+
+    //-------------改
 }
 
