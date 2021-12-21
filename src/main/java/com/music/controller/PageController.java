@@ -1,9 +1,6 @@
 package com.music.controller;
 
-import com.music.service.AlbumService;
-import com.music.service.MusicService;
-import com.music.service.MusicStyleService;
-import com.music.service.SingerService;
+import com.music.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +17,8 @@ public class PageController {
     MusicStyleService style;
     @Autowired
     AlbumService album;
+    @Autowired
+    UserService userService;
 
     @RequestMapping("/admin")
     public String admin(){ return "admin";}
@@ -29,14 +28,10 @@ public class PageController {
         return "mainBody/meter";
     }
 
-    //用户管理
+    //用户管理 -----
     @RequestMapping("/userMana")
     public String userMana(Model model){
-//
-//        model.addAttribute("list",user.getUserAll());
-//
-//        model.addAttribute("useradd",user.insertUser());
-
+        model.addAttribute("userList",userService.getUserAll());
         return "mainBody/userMana";
     }
 
@@ -46,10 +41,7 @@ public class PageController {
 
         //album列表
         model.addAttribute("list",album.getAlbumAll());
-        //添加album
-//        model.addAttribute("albumadd",album.insertAlbum());
-        /*model.addAttribute("list2",singer.queryAllSinger());
-        model.addAttribute("list3",style.queryAllStyle());*/
+
         return "mainBody/albumMana";
     }
 
