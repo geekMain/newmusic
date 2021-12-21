@@ -37,7 +37,7 @@
             <!--搜素框-->
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="查找歌曲">
+                    <input type="text" class="form-control" placeholder="查找用户">
                 </div>
                 <button type="submit" class="btn btn-default">查找</button>
             </form>
@@ -70,13 +70,76 @@
                     <td>${user.userAvatar}</td>
                     <td>${user.userArea}</td>
                     <td><a href="/user/userDelete/${user.userId}">删除</a></td>
+                    <td><a>修改</a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
     <div class="tab-pane fade" id="2">
+        <div>
+            <form model="userAdd" style="text-align: center">
+                <div class="form-group" style="text-align: center">
+                    <label>用户密码</label>
+                    <input type="text" class="form-control" id="userpassword" style="text-align:center" placeholder="*请输入密码">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>用户名称</label>
+                    <input type="text" class="form-control" id="username" style="text-align:center" placeholder="*请输入你的名字">
+                </div>
+                <div class="form-group"style="text-align: center">
+                    <label>用户介绍</label>
+                    <input type="text" class="form-control" id="introduce" style="text-align:center" placeholder="请输入介绍">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>用户性别</label>
+                    <input type="text" class="form-control" id="usersex" style="text-align:center" placeholder="*请输入你的性别">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>用户生日</label>
+                    <input type="text" class="form-control" id="birthday" style="text-align:center" placeholder="*请输入你的生日">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>用户地区</label>
+                    <input type="text" class="form-control" id="userarea" style="text-align:center" placeholder="*请输入你所地址">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>1</label>
+                    <input type="text" class="form-control" id="exampleInputFile6" style="text-align:center" placeholder="*请输入1">
+                </div>
+                <button type="submit" onclick="addUser()" class="btn btn-default">添加</button>
+            </form>
+        </div>
     </div>
 </div>
+<script>
+    function addUser(){
+        $.ajax({
+            type: "POST",
+            url: "/user/addUser",
+            data: {
+                userpassword : ;//用户密码
+                username : ;//用户名称
+                introduce : ;//用户介绍
+                sex : ;//用户性别
+                userBirthday : ;//用户生日
+                userAvatar : ;//用户头像
+                userArea : ;//用户地址
+            },
+            success: function (result) {
+                var scorePage = result.data;
+                if (result.success) {
+                    var pageContent = "<option>请选择年级</option>";
+                    $.each(scorePage, function (i, grade) {
+                        pageContent = pageContent + '<option value="' + grade.id + '">' + grade.grade_name + '</option>';
+                    });
+                    $("#grade").html(pageContent);
+                } else {
+                    layer.msg("年级查询失败！", {time: 1000, icon: 5, shift: 6});
+                }
+            }
+        })
+    }
+</script>
 </body>
 </html>

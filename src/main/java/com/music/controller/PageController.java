@@ -28,12 +28,13 @@ public class PageController {
         return "mainBody/meter";
     }
 
-    //用户管理 -----
+    //用户管理 -----查--cs
     @RequestMapping("/userMana")
     public String userMana(Model model){
         model.addAttribute("userList",userService.getUserAll());
-        return "mainBody/userMana";
-    }
+        return "mainBody/userMana";}
+
+
 
     //专辑管理--hqr
     @RequestMapping("/albumMana")
