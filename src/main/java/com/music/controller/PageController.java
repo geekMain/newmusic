@@ -1,10 +1,16 @@
 package com.music.controller;
 
 import com.music.service.*;
+import com.music.util.LogUtil;
+import com.mysql.cj.log.Log;
+import com.sun.deploy.nativesandbox.comm.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.soap.MimeHeaders;
 
 @Controller
 @RequestMapping("/Page")
@@ -21,7 +27,9 @@ public class PageController {
     UserService userService;
 
     @RequestMapping("/admin")
-    public String admin(){ return "admin";}
+    public String admin(){
+        return "admin";
+    }
 
     @RequestMapping("/meter")
     public String meter(){

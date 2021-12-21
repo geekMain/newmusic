@@ -1,10 +1,7 @@
 package com.music.controller;
 
 import com.music.bean.Comment;
-import com.music.dao.CommentDao;
-import com.music.service.CommentService;
-import com.music.service.SingerService;
-import com.music.service.Songservice;
+import com.music.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +18,10 @@ public class UserCenterManagementController {
     CommentService commentService;
     @Autowired
     SingerService singer;
+    @Autowired
+    UserService userService;
+    @Autowired
+    UserLoginService userLoginService;
 
     @RequestMapping("/fanMana")
     public String fanMana(){
@@ -30,6 +31,7 @@ public class UserCenterManagementController {
     public String inforMana(){
         return "userMana/informMana";
     }
+
     @RequestMapping("/logMana")
     public String logMana(){
         return "userMana/logMana";

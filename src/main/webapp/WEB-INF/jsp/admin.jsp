@@ -53,7 +53,7 @@
 
             <li class="no-line layui-nav-item">
                 <a href="javascript:">
-                    <img src="/static/avatar/${user.userAvatar}" class="layui-nav-img">
+                    <img src="/static/avatar/${sessionScope.user.userAvatar}" class="layui-nav-img">
                 </a>
                 <dl id="userInfo" class="layui-nav-child">
                     <dd><a lay-id="u-1" href="javascript:" data-url="pages/member/user.html">个人中心<span
@@ -85,9 +85,9 @@
             <div class="okadmin-logo">New Music！</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
-                    <img src="/static/avatar/${user.userAvatar}" class="userAvatar">
+                    <img src="/static/avatar/${sessionScope.user.userAvatar}" class="userAvatar">
                 </a>
-                <p>你好！<span class="userName">${user.username}</span>, 欢迎登录</p>
+                <p>你好！<span class="userName">${sessionScope.user.username}</span>, 欢迎登录</p>
             </div>
             <!--左侧导航菜单-->
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">

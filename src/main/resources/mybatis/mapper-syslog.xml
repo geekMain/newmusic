@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.SysLogDao">
+
+    <insert id="addSysLog" parameterType="SysLog">
+        insert into sys_log (user_id,login_device,sys_user_name,sys_name,login_browser,login_address,login_time,log_uuid)
+        values
+        (#{userId},#{loginDevice},#{sysUserName},#{sysName},#{loginBrowser},#{loginAddress},#{loginTime},#{logUUID})
+    </insert>
+    <insert id="addUserLog" parameterType="UserOperationLog">
+        insert into user_operation_log (log_uuid)
+        values
+        (#{logUUID})
+    </insert>
+</mapper>
