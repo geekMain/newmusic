@@ -11,4 +11,6 @@ public interface UserService {
     public List<User> getUserAll();
 
     public  Integer userDelete(Integer userId);
+
+    public Integer userAdd (UserLogin userLogin);
 }

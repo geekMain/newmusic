@@ -30,5 +30,14 @@
                user_area as userArea
         from sys_user
     </select>
-
+    <insert id="userLoginAdd" parameterType="userLogin">
+        insert into user_login (user_count,user_password,user_email,user_phone,user_register_date)
+        values
+        (#{userCount},#{userPassword},#{userEmail},#{userPhone},#{userRegisterDate})
+    </insert>
+    <!--<insert id="userAdd" parameterType="userLogin">
+        insert into sys_user (user_login_id,user_name,introduce,user_sex,user_birthday,user_avatar,user_area)
+        values
+            (#{userLoginId},#{username},#{introduce},#{sex},#{userBirthday},#{userAvatar},#{userArea},)
+    </insert>-->
 </mapper>

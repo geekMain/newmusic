@@ -11,4 +11,6 @@ public interface UserDao {
     public List<User> getUserAll();
 
     public  Integer userDelete(Integer userId);
+
+    Integer userLoginAdd(UserLogin userLogin);
 }

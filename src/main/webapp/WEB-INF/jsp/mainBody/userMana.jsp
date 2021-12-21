@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DELL
@@ -16,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/lib/layui/css/layui.css">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </head>
@@ -32,7 +32,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="sr-only">(current)</span></a></li>
                 <li><a href="#1" data-toggle="tab">查看</a></li>
-                <li><a href="#2" data-toggle="tab">添加</a></li>
+                <li><a href="#2" data-toggle="tab">添加账号</a></li>
+                <li><a href="#3" data-toggle="tab">添加用户信息</a></li>
             </ul>
             <!--搜素框-->
             <form class="navbar-form navbar-left">
@@ -45,6 +46,7 @@
     </div>
 </nav>
 <div>
+    <div class="tab-content">
     <div class="tab-pane fade in active" id="1">
         <table class="table table-condensed">
             <tr>
@@ -78,11 +80,30 @@
     </div>
     <div class="tab-pane fade" id="2">
         <div>
-            <form model="userAdd" style="text-align: center">
+            <form action="/user/userLoginAdd" method="post" style="text-align: center">
+                <div class="form-group" style="text-align: center">
+                    <label>用户账号</label>
+                    <input type="text" class="form-control" name="userCount" style="text-align:center" placeholder="*请输入账号">
+                </div>
                 <div class="form-group" style="text-align: center">
                     <label>用户密码</label>
-                    <input type="text" class="form-control" id="userpassword" style="text-align:center" placeholder="*请输入密码">
+                    <input type="text" class="form-control" name="userPassword" style="text-align:center" placeholder="*请输入密码">
                 </div>
+                <div class="form-group"style="text-align: center">
+                    <label>用户邮箱</label>
+                    <input type="text" class="form-control" name="userEmail" style="text-align:center" placeholder="请输入邮箱">
+                </div>
+                <div class="form-group" style="text-align: center">
+                    <label>用户手机号</label>
+                    <input type="text" class="form-control" name="userPhone" style="text-align:center" placeholder="*请输入手机号">
+                </div>
+                <button type="submit" onclick="addUser()" class="btn btn-default">添加</button>
+            </form>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="3">
+        <div>
+            <form model="userAd d" style="text-align: center">
                 <div class="form-group" style="text-align: center">
                     <label>用户名称</label>
                     <input type="text" class="form-control" id="username" style="text-align:center" placeholder="*请输入你的名字">
@@ -112,34 +133,6 @@
         </div>
     </div>
 </div>
-<script>
-    function addUser(){
-        $.ajax({
-            type: "POST",
-            url: "/user/addUser",
-            data: {
-                userpassword : ;//用户密码
-                username : ;//用户名称
-                introduce : ;//用户介绍
-                sex : ;//用户性别
-                userBirthday : ;//用户生日
-                userAvatar : ;//用户头像
-                userArea : ;//用户地址
-            },
-            success: function (result) {
-                var scorePage = result.data;
-                if (result.success) {
-                    var pageContent = "<option>请选择年级</option>";
-                    $.each(scorePage, function (i, grade) {
-                        pageContent = pageContent + '<option value="' + grade.id + '">' + grade.grade_name + '</option>';
-                    });
-                    $("#grade").html(pageContent);
-                } else {
-                    layer.msg("年级查询失败！", {time: 1000, icon: 5, shift: 6});
-                }
-            }
-        })
-    }
-</script>
+</div>
 </body>
 </html>
