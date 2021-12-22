@@ -38,6 +38,7 @@
                 <li><a href="#1" data-toggle="tab">查看</a></li>
                 <li><a href="#2" data-toggle="tab">添加账号</a></li>
                 <li><a href="#3" data-toggle="tab">添加用户信息</a></li>
+                <li><a href="#4" data-toggle="tab">添加用户信息</a></li>
             </ul>
             <!--搜素框-->
             <form class="navbar-form navbar-left">
@@ -74,7 +75,8 @@
 
                                 </ul>
                                 <div id="myTabContent" class="tab-content" style="padding:50px;">
-                                    <div class="tab-pane fade in active" id="1">
+                                    <div class="tab-pane fade in active" id="4">
+                                        //--------------------------
                                         <form action="" class="login-form" method="post">
                                             <input type="text" autocomplete="off"
                                                    placeholder="输入查询用户id" name="id" required/>

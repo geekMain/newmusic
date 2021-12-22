@@ -14,7 +14,7 @@ public class SysLog {
     private Integer userId;//用户id
     private String loginDevice;//登录设备
     private String sysUserName;//登录设备用户名
-    private String sysName;//登录设备用户名
+    private String sysName;//登录系统名
     private String loginBrowser;//登录浏览器
     private String loginAddress;//登录地址
     private String loginTime;//登录时间
