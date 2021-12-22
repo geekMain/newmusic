@@ -33,11 +33,9 @@ public class AlbumController {
     public String insertalbum(Album album,Model model){
         albumService.insertAlbum(album);
         model.addAttribute("albumlist",albumService.getAlbumAll());
-        System.out.println(albumService.insertAlbum(album));
         return "mainBody/albumMana";
     }
     //根据id删除专辑
-    //删除用户
     @RequestMapping("/deleteAlbum/{albumId}")
     public String deleteAlbum(@PathVariable int albumId, Model model) {
         albumService.deleteAlbum(albumId);
@@ -47,14 +45,16 @@ public class AlbumController {
     //修改album
     @RequestMapping("/updateAlbum/{albumId}")
     public String updateAlbum(@PathVariable int albumId,Album album,Model model) {
+        System.out.println("11111111111111111");
         album.setAlbumId(albumId);
         Map<String,Object> map = new HashMap<>();
         map.put("albumName",album.getAlbumName());
-        map.put("albumSingerId",album.getAlbumSingerId());
+        /*map.put("albumSingerId",album.getAlbumSingerId());
         map.put("issuingReleaseTime",album.getIssuingReleaseTime());
         map.put("companyId",album.getCompanyId());
-        map.put("introduce",album.getIntroduce());
+        map.put("introduce",album.getIntroduce());*/
         albumService.updateAlbum(map);
+        model.addAttribute("albumlist",albumService.getAlbumAll());
         System.out.println("album="+album);
         return "mainBody/albumMana";
     }
