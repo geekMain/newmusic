@@ -39,6 +39,4 @@ public class AlbumServiceImpl implements AlbumService {
     public int updateAlbum(Map<String, Object> map) {
         return albumDao.updateAlbum(map);
     }
-
-
 }

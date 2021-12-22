@@ -27,7 +27,7 @@
                 <!-- 基本功能 -->
                 <ul class="nav navbar-nav">
                     <%--<li class="active"><a href="${pageContext.request.contextPath}/Page/albumMana"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span><span class="sr-only">(current)</span></a></li>--%>
-                    <li><a href="${pageContext.request.contextPath}/Page/albumMana">查看所有</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Page/albumMana" data-toggle="tab">查看所有</a></li>
                     <li><a href="#2" data-toggle="tab">添加</a></li>
                 </ul>
                 <!--搜素框-->
@@ -56,16 +56,12 @@
                 <c:forEach var="album" items="${albumlist}">
                     <tr>
                         <td>${album.albumId}</td>
-                        <td>${album.albumName}</td>
+                        <td class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">${album.albumName}</td>
                         <td>${album.albumSingerId}</td>
                         <td>${album.issuingReleaseTime}</td>
                         <td>${album.companyId}</td>
                         <td>${album.introduce}</td>
-                        <td>
-                            <a href="${pageContext.request.contextPath}/albumPage/updateAlbum/${album.albumId}">修改</a>
-                            &nbsp; | &nbsp;
-                            <a href="${pageContext.request.contextPath}/albumPage/deleteAlbum/${album.albumId}">删除</a>
-                        </td>
+                        <td><a href="${pageContext.request.contextPath}/albumPage/deleteAlbum/${album.albumId}">删除</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -98,7 +94,7 @@
                 </form>
             </div>
         </div>
-        <div class="tab-pane fade" id="3">
+        <%--<div class="tab-pane fade" id="3">
             <div>
                 <form model="" action="${pageContext.request.contextPath}/albumPage/updateAlbum/${albumId}" method="post">
                     <div class="form-group">
@@ -123,6 +119,32 @@
                     </div>
                     <button type="submit" class="btn btn-default">修改</button>
                 </form>
+            </div>
+        </div>--%>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">修改</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="${pageContext.request.contextPath}/albumPage/updateAlbum/{albumId}" method="post">
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">专辑名字:</label>
+                                <input type="text" name="albumName" class="form-control" id="recipient-name" value="${albumName}">
+                            </div>
+                            <%--<div class="form-group">
+                                <label for="message-text" class="control-label">专辑介绍:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>--%>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">修改</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

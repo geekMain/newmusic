@@ -16,7 +16,7 @@ public class PageController {
     @Autowired
     MusicStyleService style;
     @Autowired
-    AlbumService album;
+    AlbumService albumService;
     @Autowired
     UserService userService;
 
@@ -39,10 +39,7 @@ public class PageController {
     //专辑管理--hqr
     @RequestMapping("/albumMana")
     public String albumMana(Model model){
-
-        //album列表
-        model.addAttribute("list",album.getAlbumAll());
-
+        model.addAttribute("albumlist",albumService.getAlbumAll());
         return "mainBody/albumMana";
     }
 

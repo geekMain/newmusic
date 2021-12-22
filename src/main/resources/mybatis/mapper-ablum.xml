@@ -44,10 +44,10 @@
     <update id="updateAlbum" parameterType="map">
         update album
         <set>
-            <if test="album_name != null and album_name != ''">
+            <!--<if test="album_name != null and album_name != ''">-->
                 album_name = #{albumName},
-            </if>
-            <if test="album_singer_id != null and album_singer_id != ''">
+            <!--</if>-->
+            <!--<if test="album_singer_id != null and album_singer_id != ''">
                 album_singer_id = #{albumSingerId},
             </if>
             <if test="album_release_time != null and album_release_time != ''">
@@ -55,9 +55,9 @@
             </if>
             <if test="Issuing_company_id != null and Issuing_company_id != ''">
                 Issuing_company_id = #{companyId},
-            </if>
+            </if>-->
             <!--<if test="album_introduce != null and album_introduce != ''">-->
-                album_introduce = #{introduce}
+                /*album_introduce = #{introduce}*/
             <!--</if>-->
         </set>
         <where>
