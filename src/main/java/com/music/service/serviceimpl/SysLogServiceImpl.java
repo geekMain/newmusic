@@ -6,9 +6,8 @@ import com.music.dao.SysLogDao;
 import com.music.service.SysLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
-@Service
+@Controller
 public class SysLogServiceImpl implements SysLogService {
     @Autowired
     SysLogDao sysLogDao;
