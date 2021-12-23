@@ -19,41 +19,51 @@
 <body class="ok-body-scroll console">
 <div class="ok-body home">
     <div class="layui-row layui-col-space15">
-        <div class="layui-col-md8">
+        <div class="layui-col-md9">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">歌曲热度</div>
+                    <div class="ok-card-title">用户日志</div>
                 </div>
-                <div class="ok-card-body map-body">
-                    <div id="music"  style="width: 100%; height: 100%;"></div>
+                <div class="ok-card-body map-body" style="height: 415px;">
+                    <div id="music"  style="width: 100%; height: 100%;">
+                        <div></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="layui-col-md4">
+        <div class="layui-col-md3">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <div class="ok-card-title">用户登录日志</div>
+                    <div class="ok-card-title">登录信息</div>
                 </div>
-                <div class="ok-card-body map-body">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-md6">
-            <div class="layui-card">
-                <div class="ok-card-body ">
-
-                </div>
-            </div>
-        </div>
-        <div class="layui-col-md6">
-            <div class="layui-card">
-                <div class="ok-card-body ">
-                    <div class="map-china" id="main"></div>
+                <div class="ok-card-body" style="padding: 0px;">
+                    <div class="ok-card-body" style="padding: 8px;">
+                        <ul>
+                            <li>
+                                用户：
+                                ${sessionScope.sysLog.userId}
+                            </li>
+                            <li>
+                                设备：${sessionScope.sysLog.loginDevice}
+                            </li>
+                            <li>
+                                设备用户：${sessionScope.sysLog.sysUserName}
+                            </li>
+                            <li>
+                                设备名：${sessionScope.sysLog.sysName}
+                            </li>
+                            <li>
+                                浏览器：${sessionScope.sysLog.loginBrowser}
+                            </li>
+                            <li>
+                                地址：${sessionScope.sysLog.loginAddress}
+                            </li>
+                            <li>
+                                登录时间：${sessionScope.sysLog.loginTime}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

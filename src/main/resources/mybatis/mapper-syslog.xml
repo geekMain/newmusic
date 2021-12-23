@@ -9,7 +9,20 @@
         values
         (#{userId},#{loginDevice},#{sysUserName},#{sysName},#{loginBrowser},#{loginAddress},#{loginTime},#{logUUID})
     </insert>
-    <insert id="addUserLog" parameterType="UserOperationLog">
+
+    <select id="querySysLog" resultType="SysLog">
+        select user_id as userId,
+               login_device as loginDevice,
+               sys_user_name as sysUserName,
+               sys_name as sysName,
+               login_browser as loginBrowser,
+               login_address as loginAddress,
+               login_time as loginTime,
+           log_uuid as logUUID
+        from sys_log
+    </select>
+
+    <insert id="addOperationUserLog" parameterType="UserOperationLog">
         insert into user_operation_log (log_uuid)
         values
         (#{logUUID})

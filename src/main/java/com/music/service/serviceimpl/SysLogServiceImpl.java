@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SysLogServiceImpl implements SysLogService {
     @Autowired
@@ -20,7 +22,12 @@ public class SysLogServiceImpl implements SysLogService {
     }
 
     @Override
-    public int addUserLog(String uuid) {
-        return sysLogDao.addUserLog(uuid);
+    public List<SysLog> querySysLog() {
+        return sysLogDao.querySysLog();
+    }
+
+    @Override
+    public int addOperationUserLog(String uuid) {
+        return sysLogDao.addOperationUserLog(uuid);
     }
 }

@@ -1,7 +1,12 @@
 package com.music.service;
 import com.music.bean.SysLog;
 
+import java.util.List;
+
 public interface SysLogService {
     public int addSysLog(SysLog sysLog);
-    public int addUserLog(String uuid);
+
+    public List<SysLog> querySysLog();
+
+    public int addOperationUserLog(String uuid);
 }
