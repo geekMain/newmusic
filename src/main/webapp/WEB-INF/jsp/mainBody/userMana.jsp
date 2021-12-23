@@ -35,10 +35,10 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="#1" data-toggle="tab">查看</a></li>
+                <li><a href="#0" data-toggle="tab">查看用户</a></li>
+                <li><a href="#1" data-toggle="tab">查看用户信息</a></li>
                 <li><a href="#2" data-toggle="tab">添加账号</a></li>
                 <li><a href="#3" data-toggle="tab">添加用户信息</a></li>
-                <li><a href="#4" data-toggle="tab">添加用户信息</a></li>
             </ul>
             <!--搜素框-->
             <form class="navbar-form navbar-left">
@@ -53,53 +53,39 @@
 <div>
     <div class="tab-content">
         <div class="col-md-12">
-            <div class="container">
+            <div class="tab-pane fade in active" id="0">
 
-                <!-- 模态框 -->
-                <div class="modal fade" id="myModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- 模态框头部 -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">操作用户</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- 模态框主体 -->
-                            <div class="modal-body">
-                                <ul id="myTab" class="nav nav-tabs">
-                                    <%--<li class="active">
-                                        <a href="#1" data-toggle="tab">查询用户</a>
-                                    </li>--%>
-
-                                </ul>
-                                <div id="myTabContent" class="tab-content" style="padding:50px;">
-                                    <div class="tab-pane fade in active" id="4">
-                                        //--------------------------
-                                        <form action="" class="login-form" method="post">
-                                            <input type="text" autocomplete="off"
-                                                   placeholder="输入查询用户id" name="id" required/>
-                                            </br></br>
-                                            <%--<input  class="btn btn-primary" type="submit" value="确定"/>--%>
-                                            <span class="btn btn-primary">
-                                                    <a style="text-decoration: none;color: #ffffff" href="">查询全部</a>
-                                                </span>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 模态框底部 -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <table class="table table-condensed">
+                    <tr>
+                        <th>用户id</th>
+                        <th>用户登录id</th>
+                        <th>用户名称</th>
+                        <th>用户介绍</th>
+                        <th>用户性别</th>
+                        <th>用户生日</th>
+                        <th>用户头像</th>
+                        <th>用户地区</th>
+                        <th>用户删除</th>
+                    </tr>
+                    <tbody>
+                    <c:forEach var="user" items="${userList}">
+                        <tr>
+                            <form action="/user/userInformationAdd" method="post" ACCEPT-CHARSET="UTF-8">
+                                <td><input class="layui-col-md6" type="text" name="userId" value="${user.userId}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userLoginId" value="${user.userLoginId}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="username" value="${user.username}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="introduce" value="${user.introduce}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="sex" value="${user.sex}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userBirthday" value="${user.userBirthday}"/></td>
+                                <td><a class="layui-col-md10" href="/user/userDelete/${user.userId}">删除</a></td>
+                                <td><button class="layui-col-md10" type="submit" class="btn btn-default">修改</button></td>
+                            </form>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </div>
+
             <div class="tab-pane fade in active" id="1">
 
                 <table class="table table-condensed">
@@ -112,25 +98,24 @@
                         <th>用户生日</th>
                         <th>用户头像</th>
                         <th>用户地区</th>
-                        <th>用户操作</th>
+                        <th>用户删除</th>
+                        <th>用户修改</th>
                     </tr>
                     <tbody>
                     <c:forEach var="user" items="${userList}">
                         <tr>
-                            <td>${user.userId}</td>
-                            <td>${user.userLoginId}</td>
-                            <td>${user.username}</td>
-                            <td>${user.introduce}</td>
-                            <td>${user.sex}</td>
-                            <td>${user.userBirthday}</td>
-                            <td>${user.userAvatar}</td>
-                            <td>${user.userArea}</td>
-                            <td><a href="/user/userDelete/${user.userId}">删除</a></td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#myModal">
-                                    修改
-                                </button>
-                            </td>
+                            <form action="/user/userInformationAdd" method="post" ACCEPT-CHARSET="UTF-8">
+                                <td><input class="layui-col-md10" type="text" name="userId" value="${user.userId}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="userLoginId" value="${user.userLoginId}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="username" value="${user.username}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="introduce" value="${user.introduce}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="sex" value="${user.sex}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="userBirthday" value="${user.userBirthday}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="userAvatar" value="${user.userAvatar}"/></td>
+                                <td><input class="layui-col-md10" type="text" name="userArea" value="${user.userArea}"/></td>
+                                <td><a class="layui-col-md10" href="/user/userDelete/${user.userId}">删除</a></td>
+                                <td><button class="layui-col-md10" type="submit" class="btn btn-default">修改</button></td>
+                            </form>
                         </tr>
                     </c:forEach>
                     </tbody>

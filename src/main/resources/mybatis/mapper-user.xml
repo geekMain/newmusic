@@ -35,9 +35,16 @@
         values
         (#{userCount},#{userPassword},#{userEmail},#{userPhone},#{userRegisterDate})
     </insert>
-    <!--<insert id="userAdd" parameterType="userLogin">
-        insert into sys_user (user_login_id,user_name,introduce,user_sex,user_birthday,user_avatar,user_area)
-        values
-            (#{userLoginId},#{username},#{introduce},#{sex},#{userBirthday},#{userAvatar},#{userArea},)
-    </insert>-->
+
+    <update id="userInformationAdd" parameterType="user">
+        update sys_user set user_login_id=#{userLoginId},
+                            user_name=#{username},
+                            introduce=#{introduce},
+                            user_sex=#{sex},
+                            user_birthday=#{userBirthday},
+                            user_avatar=#{userAvatar},
+                            user_area=#{userArea}
+        where user_id=#{userId}
+    </update>
+
 </mapper>

@@ -13,4 +13,6 @@ public interface UserService {
     public  Integer userDelete(Integer userId);
 
     public Integer userAdd (UserLogin userLogin);
+
+    Integer userInformationAdd(User user);
 }

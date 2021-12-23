@@ -1,5 +1,6 @@
 package com.music.controller;
 
+import com.music.bean.User;
 import com.music.bean.UserLogin;
 import com.music.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class UserContorller {
     @RequestMapping(value ="/userLoginAdd",method = RequestMethod.POST)
     public String userAdd (UserLogin userLogin,Model model) {
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         userLogin.setUserRegisterDate(formatter.format(date));
         int s = userService.userAdd(userLogin);
         model.addAttribute("userList",userService.getUserAll());
@@ -43,5 +44,11 @@ public class UserContorller {
     }
 
     //-------------改
+    @RequestMapping(value = "/userInformationAdd",method = RequestMethod.POST)
+    public String userInformationAdd(User user,Model model) {
+        userService.userInformationAdd(user);
+        model.addAttribute("userList",userService.getUserAll());
+        return "mainBody/userMana";
+    }
 }
 

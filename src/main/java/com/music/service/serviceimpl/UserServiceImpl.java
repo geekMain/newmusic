@@ -31,7 +31,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer userAdd(UserLogin userLogin) {
-        return userDao.userLoginAdd(userLogin);
+    public Integer userAdd(UserLogin userLogin) {return userDao.userLoginAdd(userLogin);}
+
+    @Override
+    public Integer userInformationAdd(User user) {return userDao.userInformationAdd(user);
     }
 }
