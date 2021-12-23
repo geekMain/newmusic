@@ -25,5 +25,10 @@ public class SongListServiceImpl implements Songservice {
         return songListDao.getSongAll(songId);
     }
 
+    @Override
+    public int insertSongList(SongList songList) {
+        return 0;
+    }
+
 
 }
