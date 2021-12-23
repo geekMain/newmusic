@@ -26,7 +26,7 @@ public class LogUtil {
         Map<String,String> map = System.getenv();
 
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
 
