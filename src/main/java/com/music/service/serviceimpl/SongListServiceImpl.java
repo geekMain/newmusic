@@ -29,7 +29,12 @@ public class SongListServiceImpl implements Songservice {
 
     @Override
     public int insertSongList(SongList songList) {
-        return 0;
+        return songListDao.insertSongList(songList);
+    }
+
+    @Override
+    public int deleteSongList(int songId) {
+        return songListDao.deleteSongList(songId);
     }
 
 

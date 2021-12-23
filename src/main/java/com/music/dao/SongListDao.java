@@ -1,6 +1,8 @@
 package com.music.dao;
 
 import com.music.bean.SongList;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface SongListDao {
@@ -14,5 +16,6 @@ public interface SongListDao {
     int insertSongList(SongList songList);
 
     //删除歌单
+    int deleteSongList(@Param("songId") int songId);
 
 }
