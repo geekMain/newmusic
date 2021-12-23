@@ -25,11 +25,11 @@
         select * from music.song_list where song_id = #{songId}
     </select>
 
-    <!--<insert id="insertSongList" parameterType="map">
-        insert into music.music
-        (style_id,singer_id,music_name,music_length,music_img,music_file,music_text_name)
+    <insert id="insertSongList" parameterType="map">
+        insert into music.song_list
+        (user_id,song_name,song_create_time,song_introduce,song_count)
         values
-        (#{styleId},#{singerId},#{musicName},#{musicLength},#{musicImg},#{musicFile},#{musicTextName})
-    </insert>-->
+        (#{userId},#{songName},#{songCreateTime},#{songIntroduce},#{songCount})
+    </insert>
 
 </mapper>

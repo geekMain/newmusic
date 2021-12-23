@@ -36,7 +36,7 @@ public class UserLoginController {
 
     @RequestMapping(value ="/index",method = RequestMethod.POST)
     public String login(UserLogin user, Model model, HttpServletRequest request, HttpSession session){
-        /*User userInfo = userService.getUser(userLoginService.getUserLogin(user));
+ /*       User userInfo = userService.getUser(userLoginService.getUserLogin(user));
         if (userLoginService.getUserLogin(user) == null){
             model.addAttribute("msg","layer.msg('账号或密码错误！')");
             return "login";

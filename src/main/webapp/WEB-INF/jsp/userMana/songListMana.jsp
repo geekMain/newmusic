@@ -17,7 +17,6 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </head>
-
 <body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -27,21 +26,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- 基本功能 -->
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="bi bi-brightness-alt-high"></i>
-                        </span><span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item"><a href="${pageContext.request.contextPath}/userCenterMana/songListMana" >查看</a></li>
-                <li class="nav-item"><a href="#2" data-toggle="tab">添加</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/userCenterMana/songListMana" >查看所有</a></li>
+                <li><a href="#2" data-toggle="tab">添加</a></li>
             </ul>
             <!--搜素框-->
             <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/songList/songListOne" method="post">
                 <div class="form-group">
                     <input type="text" name="songId" class="form-control" placeholder="请输入要查询的歌单id">
                 </div>
-                <button type="submit" class="btn btn-default">查找</button>
+                <button type="submit" class="btn btn-default">查看</button>
             </form>
         </div>
     </div>
@@ -75,29 +68,28 @@
     </div>
     <div class="tab-pane fade" id="2">
         <div>
-            <form model="abbsong">
+            <form model="" action="${pageContext.request.contextPath}/songList/songListAdd"   method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmailuid">userId</label>
+                    <input type="text" name="userId" class="form-control" id="exampleInputEmailuid" placeholder="id">
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">歌单名称</label>
-                    <input type="" class="form-control" id="exampleInputEmail1" placeholder="歌单名称">
+                    <input type="text" name="songName" class="form-control" id="exampleInputEmail1" placeholder="歌单名称">
                 </div>
                 <div class="form-group">
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>请选择你歌单的类型</option>
-                        <!--这里之后需要从数据库中获取数据-->
-                        <option value="1">流行</option>
-                        <option value="2">摇滚</option>
-                        <option value="3">民谣</option>
-                        <option value="4">电子</option>
-                        <option value="5">舞曲</option>
-                        <option value="6">民谣</option>
-                    </select>
+                    <label for="exampleInputEmail2">歌单创建时间</label>
+                    <input type="text" name="songCreateTime" class="form-control" id="exampleInputEmail2" placeholder="歌单创建时间">
                 </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox">
-                    </label>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">歌单介绍</label>
+                    <input type="text" name="songIntroduce" class="form-control" id="exampleInputEmail3" placeholder="歌单介绍">
                 </div>
-                <button type="submit" class="btn btn-default" >添加</button>
+                <div class="form-group">
+                    <label for="exampleInputEmail4">歌单浏览量</label>
+                    <input type="text" name="songCount" class="form-control" id="exampleInputEmail4" placeholder="歌单浏览量">
+                </div>
+                <button type="submit" class="btn btn-default">添加</button>
             </form>
         </div>
     </div>

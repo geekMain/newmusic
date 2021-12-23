@@ -14,11 +14,10 @@
             from user_login where user_count=#{userCount} and user_password=#{userPassword}
 
         </select>
-
-    <select id="getUserAdmin" parameterType="UserLogin" resultType="Integer">
+        <select id="getUserAdmin" parameterType="UserLogin" resultType="Integer">
             select user_login_id
             from sys_admin where user_login_id = #{id}
-    </select>
+        </select>
 
 
 </mapper>
