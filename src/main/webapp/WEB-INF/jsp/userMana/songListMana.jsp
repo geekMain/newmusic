@@ -28,6 +28,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/userCenterMana/songListMana" >查看所有</a></li>
                 <li><a href="#2" data-toggle="tab">添加</a></li>
+                <li><a href="#3" data-toggle="tab">修改歌单</a></li>
             </ul>
             <!--搜素框-->
             <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/songList/songListOne" method="post">
@@ -50,6 +51,7 @@
                 <th>歌单创建时间</th>
                 <th>歌单介绍</th>
                 <th>歌单浏览量</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
@@ -61,6 +63,7 @@
                     <td>${songlist.songCreateTime}</td>
                     <td>${songlist.songIntroduce}</td>
                     <td>${songlist.songCount}</td>
+                    <td><a href="${pageContext.request.contextPath}/songList/songListDelete/${songlist.songId}">删除</a></td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -90,6 +93,33 @@
                     <input type="text" name="songCount" class="form-control" id="exampleInputEmail4" placeholder="歌单浏览量">
                 </div>
                 <button type="submit" class="btn btn-default">添加</button>
+            </form>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="3">
+        <div>
+            <form model="" action="${pageContext.request.contextPath}/songList/songListAdd"   method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmailuid">userId</label>
+                    <input type="text" name="userId" class="form-control" id="example0" placeholder="id">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">歌单名称</label>
+                    <input type="text" name="songName" class="form-control" id="example1" placeholder="修改歌单名称">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">歌单创建时间</label>
+                    <input type="text" name="songCreateTime" class="form-control" id="example2" placeholder="修改歌单创建时间">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">歌单介绍</label>
+                    <input type="text" name="songIntroduce" class="form-control" id="example3" placeholder="修改单介绍">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail4">歌单浏览量</label>
+                    <input type="text" name="songCount" class="form-control" id="example4" placeholder="修改歌单浏览量">
+                </div>
+                <button type="submit" class="btn btn-default">修改歌单</button>
             </form>
         </div>
     </div>

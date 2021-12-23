@@ -32,4 +32,8 @@
         (#{userId},#{songName},#{songCreateTime},#{songIntroduce},#{songCount})
     </insert>
 
+    <delete id="deleteSongList" parameterType="map">
+        delete from music.song_list where song_id = #{songId}
+    </delete>
+
 </mapper>

@@ -2,6 +2,8 @@ package com.music.service;
 
 
 import com.music.bean.SongList;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface Songservice {
@@ -13,4 +15,7 @@ public interface Songservice {
 
     //添加歌单
     int insertSongList(SongList songList);
+
+    //删除歌单
+    int deleteSongList(@Param("songId") int songId);
 }
