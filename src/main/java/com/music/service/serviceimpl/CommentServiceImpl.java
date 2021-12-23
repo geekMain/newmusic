@@ -5,11 +5,12 @@ import com.music.dao.CommentDao;
 import com.music.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@Service
 public class CommentServiceImpl implements CommentService {
   @Autowired
   CommentDao commentDao;

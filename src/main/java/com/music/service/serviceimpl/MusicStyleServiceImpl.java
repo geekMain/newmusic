@@ -6,10 +6,11 @@ import com.music.dao.MusicStyleDao;
 import com.music.service.MusicStyleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Controller
+@Service
 public class MusicStyleServiceImpl implements MusicStyleService {
 
   @Autowired
