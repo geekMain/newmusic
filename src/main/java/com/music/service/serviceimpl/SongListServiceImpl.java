@@ -7,11 +7,10 @@ import com.music.dao.SongListDao;
 import com.music.service.Songservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Controller
 public class SongListServiceImpl implements Songservice {
     @Autowired
     private SongListDao songListDao;
