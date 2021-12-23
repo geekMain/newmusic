@@ -45,6 +45,7 @@ public class UserLoginController {
             model.addAttribute("msg","layer.msg('用户不是管理员！')");
             return "login";
         }
+        session.setAttribute("user",userInfo);
 
         Map<String,Object> objectMap = new LogUtil().getInformation(request);
         SysLog sysLog = new SysLog();
@@ -61,9 +62,6 @@ public class UserLoginController {
         int s = sysLogService.addSysLog(sysLog);
         int ss = sysLogService.addOperationUserLog(sysLog.getLogUUID());
 
-
-        session.setAttribute("sysLog",sysLog);
-        session.setAttribute("user",userInfo);
         return "admin";
     }
 }

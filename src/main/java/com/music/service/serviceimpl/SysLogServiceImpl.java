@@ -15,7 +15,6 @@ public class SysLogServiceImpl implements SysLogService {
     @Autowired
     SysLogDao sysLogDao;
 
-
     @Override
     public int addSysLog(SysLog sysLog) {
         return sysLogDao.addSysLog(sysLog);

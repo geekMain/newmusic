@@ -1,13 +1,15 @@
 package com.music.controller;
 
 import com.music.bean.Comment;
+import com.music.bean.InformationInteraction;
+import com.music.bean.InformationLibrary;
 import com.music.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
+import javax.jws.WebParam;
 import java.util.List;
 
 @Controller
@@ -24,14 +26,21 @@ public class UserCenterManagementController {
     @Autowired
     UserLoginService userLoginService;
     @Autowired
-    SysLogService sysLogService;
-
+    InformationLibraryService libraryService;
+    @Autowired
+    InformationInteractionService interactionService;
     @RequestMapping("/fanMana")
     public String fanMana(){
         return "userMana/fanMana";
     }
     @RequestMapping("/informMana")
-    public String inforMana(){
+    public String inforMana(Model model){
+        List<InformationLibrary> Libraries = libraryService.queryAllLibrary();
+        List<InformationInteraction> Interactions = interactionService.queryAllInteraction();
+
+        model.addAttribute("list1",Libraries);
+        model.addAttribute("list2",Interactions);
+
         return "userMana/informMana";
     }
 
