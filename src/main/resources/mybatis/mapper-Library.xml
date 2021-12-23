@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.InformationLibraryDao">
+    <resultMap id="RMap" type="InformationLibrary">
+        <id column="inf_library" property="infLibrary"></id>
+        <result column="inf_obj_id1" property="infObjId1"></result>
+        <result column="inf_obj_id2" property="infObjId2"></result>
+    </resultMap>
+    <!--查看所有-->
+    <select id="queryAllLibrary" resultMap="RMap">
+        SELECT * FROM music.information_library
+    </select>
+</mapper>

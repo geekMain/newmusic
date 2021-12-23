@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.dao.InformationInteractionDao">
+
+    <resultMap id="RMap" type="InformationInteraction">
+        <id column="inf_id" property="infId"></id>
+        <result column="inf_user_id" property="infUserId"></result>
+        <result column="inf_obj_id" property="infObjId"></result>
+        <result column="inf_test" property="infTest"></result>
+        <result column="inf_time" property="infTime"></result>
+        <result column="inf_library" property="infLibrary"></result>
+    </resultMap>
+    <!--查看所有-->
+    <select id="queryAllInteraction" resultMap="RMap">
+        SELECT * FROM music.information_interaction
+    </select>
+    <!--
+        根据 获取到的 id1 和 id2 来查找对应的内容
+    -->
+    <select id="queryInteraction" resultMap="RMap" parameterType="map">
+        SELECT * FROM music.information_interaction WHERE inf_library = ${id1}
+    </select>
+</mapper>
