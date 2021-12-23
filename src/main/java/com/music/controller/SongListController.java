@@ -24,7 +24,7 @@ public class SongListController {
         return "userMana/songListMana";
     }
 
-    //创建歌单
+    //添加歌单
     @RequestMapping("/songListAdd")
     public String songListAdd(SongList songList,Model model) {
         songService.insertSongList(songList);
