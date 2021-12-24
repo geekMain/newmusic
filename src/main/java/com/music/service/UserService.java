@@ -15,4 +15,6 @@ public interface UserService {
     public Integer userAdd (UserLogin userLogin);
 
     Integer userInformationAdd(User user);
+
+    Integer userSeeInformation(UserLogin userLogin);
 }

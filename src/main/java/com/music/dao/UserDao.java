@@ -15,4 +15,6 @@ public interface UserDao {
     Integer userLoginAdd(UserLogin userLogin);
 
     Integer userInformationAdd(User user);
+
+    Integer userSeeInformation(UserLogin userLogin);
 }

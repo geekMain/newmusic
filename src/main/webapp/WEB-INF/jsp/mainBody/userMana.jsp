@@ -23,13 +23,12 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">用户管理</a>
         </div>
-
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- 基本功能 -->
             <ul class="nav navbar-nav">
@@ -50,11 +49,9 @@
         </div>
     </div>
 </nav>
-<div>
     <div class="tab-content">
         <div class="col-md-12">
             <div class="tab-pane fade in active" id="0">
-
                 <table class="table table-condensed">
                     <tr>
                         <th>用户id</th>
@@ -66,40 +63,6 @@
                         <th>用户头像</th>
                         <th>用户地区</th>
                         <th>用户删除</th>
-                    </tr>
-                    <tbody>
-                    <c:forEach var="user" items="${userList}">
-                        <tr>
-                            <form action="/user/userInformationAdd" method="post" ACCEPT-CHARSET="UTF-8">
-                                <td><input class="layui-col-md6" type="text" name="userId" value="${user.userId}"/></td>
-                                <td><input class="layui-col-md6" type="text" name="userLoginId" value="${user.userLoginId}"/></td>
-                                <td><input class="layui-col-md6" type="text" name="username" value="${user.username}"/></td>
-                                <td><input class="layui-col-md6" type="text" name="introduce" value="${user.introduce}"/></td>
-                                <td><input class="layui-col-md6" type="text" name="sex" value="${user.sex}"/></td>
-                                <td><input class="layui-col-md6" type="text" name="userBirthday" value="${user.userBirthday}"/></td>
-                                <td><a class="layui-col-md10" href="/user/userDelete/${user.userId}">删除</a></td>
-                                <td><button class="layui-col-md10" type="submit" class="btn btn-default">修改</button></td>
-                            </form>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="tab-pane fade in active" id="1">
-
-                <table class="table table-condensed">
-                    <tr>
-                        <th>用户id</th>
-                        <th>用户登录id</th>
-                        <th>用户名称</th>
-                        <th>用户介绍</th>
-                        <th>用户性别</th>
-                        <th>用户生日</th>
-                        <th>用户头像</th>
-                        <th>用户地区</th>
-                        <th>用户删除</th>
-                        <th>用户修改</th>
                     </tr>
                     <tbody>
                     <c:forEach var="user" items="${userList}">
@@ -113,6 +76,34 @@
                                 <td><input class="layui-col-md10" type="text" name="userBirthday" value="${user.userBirthday}"/></td>
                                 <td><input class="layui-col-md10" type="text" name="userAvatar" value="${user.userAvatar}"/></td>
                                 <td><input class="layui-col-md10" type="text" name="userArea" value="${user.userArea}"/></td>
+                                <td><a class="layui-col-md10" href="/user/userDelete/${user.userId}">删除</a></td>
+                                <td><button class="layui-col-md10" type="submit" class="btn btn-default">修改</button></td>
+                            </form>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade in active" id="1">
+                <table class="table table-condensed">
+                    <tr>
+                        <th>用户id</th>
+                        <th>用户账号</th>
+                        <th>用户密码</th>
+                        <th>用户邮箱</th>
+                        <th>用户手机号</th>
+                        <th>用户注册时间</th>
+                    </tr>
+                    <tbody>
+                    <c:forEach var="user" items="${userList}">
+                        <tr>
+                            <form action="/user/userInformationAdd" method="post" ACCEPT-CHARSET="UTF-8">
+                                <td><input class="layui-col-md6" type="text" name="id" value="${userLogin.id}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userCount" value="${userLogin.userCount}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userPassword" value="${userLogin.userPassword}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userEmail" value="${userLogin.userEmail}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userPhone" value="${userLogin.userPhone}"/></td>
+                                <td><input class="layui-col-md6" type="text" name="userRegisterDate" value="${userLogin.userRegisterDate}"/></td>
                                 <td><a class="layui-col-md10" href="/user/userDelete/${user.userId}">删除</a></td>
                                 <td><button class="layui-col-md10" type="submit" class="btn btn-default">修改</button></td>
                             </form>
@@ -149,7 +140,6 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="3">
-                <div>
                     <form model="userAd d" style="text-align: center">
                         <div class="form-group" style="text-align: center">
                             <label>用户名称</label>
@@ -183,10 +173,8 @@
                         </div>
                         <button type="submit" onclick="addUser()" class="btn btn-default">添加</button>
                     </form>
-                </div>
             </div>
         </div>
-    </div>
 </div>
 </body>
 </html>

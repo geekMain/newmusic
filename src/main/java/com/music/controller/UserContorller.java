@@ -50,5 +50,11 @@ public class UserContorller {
         model.addAttribute("userList",userService.getUserAll());
         return "mainBody/userMana";
     }
+
+    //用户管理 -----查用户信息
+    @RequestMapping("/userMana")
+    public String userSeeInformation(Model model){
+        model.addAttribute("userList",userService.getUserAll());
+        return "mainBody/userMana";}
 }
 

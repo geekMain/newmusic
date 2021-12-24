@@ -34,6 +34,8 @@ public class UserServiceImpl implements UserService {
     public Integer userAdd(UserLogin userLogin) {return userDao.userLoginAdd(userLogin);}
 
     @Override
-    public Integer userInformationAdd(User user) {return userDao.userInformationAdd(user);
-    }
+    public Integer userInformationAdd(User user) {return userDao.userInformationAdd(user);}
+
+    @Override
+    public Integer userSeeInformation(UserLogin userLogin) {return userDao.userSeeInformation(userLogin);}
 }
