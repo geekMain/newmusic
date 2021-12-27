@@ -36,4 +36,13 @@
         delete from music.song_list where song_id = #{songId}
     </delete>
 
+    <update id="updateSongList" parameterType="com.music.bean.SongList">
+        update music.song_list
+        set
+            song_name = #{songName},
+            song_introduce = #{songIntroduce}
+        where song_id = #{songId};
+    </update>
+
+
 </mapper>

@@ -42,4 +42,15 @@ public class SongListController {
         return "userMana/songListMana";
     }
 
+    //修改歌单
+    @RequestMapping("/songListUpdate")
+    public String songListUpdate(SongList songList,Model model) {
+        System.out.println("songList = " + songList);
+        Integer count = songService.updateSongList(songList);
+        System.out.println("count = " + count);
+        List<SongList> songLists = songService.getSongListAll();
+        System.out.println("songLists = " + songLists);
+        model.addAttribute("list", songLists);
+        return "userMana/songListMana";
+    }
 }

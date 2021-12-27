@@ -18,4 +18,7 @@ public interface Songservice {
 
     //删除歌单
     int deleteSongList(@Param("songId") int songId);
+
+    //修改歌单
+    int updateSongList(SongList songList);
 }

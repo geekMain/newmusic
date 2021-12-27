@@ -1,15 +1,10 @@
 package com.music.service.serviceimpl;
-
-
 import com.music.bean.SongList;
-import com.music.bean.User;
 import com.music.dao.SongListDao;
 import com.music.service.Songservice;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -35,6 +30,11 @@ public class SongListServiceImpl implements Songservice {
     @Override
     public int deleteSongList(int songId) {
         return songListDao.deleteSongList(songId);
+    }
+
+    @Override
+    public int updateSongList(SongList songList) {
+        return songListDao.updateSongList(songList);
     }
 
 
