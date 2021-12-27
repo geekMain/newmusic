@@ -18,14 +18,13 @@ import java.util.Map;
 public class AlbumController {
     @Autowired
     AlbumService albumService;
-    //根据id查询album
+    //根据专辑名查询album
     @RequestMapping("/findalbum")
     public String findalbum(Integer albumId, Model model){
         Album album = albumService.getAlbumOne(albumId);
         List<Album> albums = new ArrayList<>();
         albums.add(album);
         model.addAttribute("albumlist",albums);
-        System.out.println(albumService.getAlbumOne(albumId));
         return "mainBody/albumMana";
     }
     //添加专辑
@@ -43,19 +42,10 @@ public class AlbumController {
         return "mainBody/albumMana";
     }
     //修改album
-    @RequestMapping("/updateAlbum/{albumId}")
-    public String updateAlbum(@PathVariable int albumId,Album album,Model model) {
-        System.out.println("11111111111111111");
-        album.setAlbumId(albumId);
-        Map<String,Object> map = new HashMap<>();
-        map.put("albumName",album.getAlbumName());
-        /*map.put("albumSingerId",album.getAlbumSingerId());
-        map.put("issuingReleaseTime",album.getIssuingReleaseTime());
-        map.put("companyId",album.getCompanyId());
-        map.put("introduce",album.getIntroduce());*/
-        albumService.updateAlbum(map);
+    @RequestMapping("/updateAlbum")
+    public String updateAlbum(Album album,Model model) {
+        albumService.updateAlbum(album);
         model.addAttribute("albumlist",albumService.getAlbumAll());
-        System.out.println("album="+album);
         return "mainBody/albumMana";
     }
 }

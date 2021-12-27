@@ -1,0 +1,7 @@
+/*影藏listinput文本框的边框*/
+.listinput{
+    width: 80px;
+    border:none;
+    background-color:transparent;
+    outline:none;
+}

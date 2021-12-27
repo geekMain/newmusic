@@ -54,7 +54,7 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public int updateAlbum(Map<String, Object> map) {
-        return albumDao.updateAlbum(map);
+    public int updateAlbum(Album album) {
+        return albumDao.updateAlbum(album);
     }
 }

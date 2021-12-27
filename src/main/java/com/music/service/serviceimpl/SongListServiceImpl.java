@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class SongListServiceImpl implements Songservice {
     @Autowired
-    private SongListDao songListDao;
+    SongListDao songListDao;
 
     @Override
     public List<SongList> getSongListAll() {
